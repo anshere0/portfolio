@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -34,6 +34,7 @@
     <a href="#hero" class="logo">Ansh <em>Arora</em></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#profiles">Profiles</a></li>
@@ -48,6 +49,7 @@
 <div class="mob" id="mob">
   <ul>
     <li><a href="#about" onclick="closeMob()">About</a></li>
+    <li><a href="#experience" onclick="closeMob()">Experience</a></li>
     <li><a href="#skills" onclick="closeMob()">Skills</a></li>
     <li><a href="#projects" onclick="closeMob()">Projects</a></li>
     <li><a href="#profiles" onclick="closeMob()">Profiles</a></li>
@@ -98,17 +100,17 @@
           <div class="hc-dot d2"></div>
           <div class="hc-dot d3"></div>
         </div>
-        <span class="hc-file">nutrisnap.py</span>
+        <span class="hc-file">airpredict.py</span>
       </div>
       <div class="hc-code">
-        <div><span class="ln">1</span><span class="cm"># NutriSnap — Ansh's project</span></div>
-        <div><span class="ln">2</span><span class="kw">import</span> <span class="fn">pandas</span> <span class="kw">as</span> pd</div>
-        <div><span class="ln">3</span><span class="kw">import</span> <span class="fn">matplotlib.pyplot</span> <span class="kw">as</span> plt</div>
+        <div><span class="ln">1</span><span class="cm"># AirPredict NYC — Ansh's project</span></div>
+        <div><span class="ln">2</span><span class="kw">import</span> xgboost <span class="kw">as</span> xgb</div>
+        <div><span class="ln">3</span><span class="kw">import</span> <span class="fn">shap</span></div>
         <div><span class="ln">4</span></div>
-        <div><span class="ln">5</span><span class="kw">class</span> <span class="fn">NutritionTracker</span>:</div>
-        <div><span class="ln">6</span>&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">analyze</span>(self, week):</div>
-        <div><span class="ln">7</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="cm"># 50+ food items tracked</span></div>
-        <div><span class="ln">8</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> self.<span class="fn">trend_report</span>(week)</div>
+        <div><span class="ln">5</span><span class="kw">class</span> <span class="fn">AirbnbPredictor</span>:</div>
+        <div><span class="ln">6</span>&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">explain</span>(self, features):</div>
+        <div><span class="ln">7</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="cm"># 10+ features, SHAP waterfalls</span></div>
+        <div><span class="ln">8</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> shap.<span class="fn">Explainer</span>(self.model)</div>
       </div>
       <div class="hc-stats">
       </div>
@@ -124,21 +126,62 @@
       <div class="sec-title">WHO I AM</div>
     </div>
     <div class="about-grid">
+      <!-- Profile Image Column -->
       <div class="about-left rv-l">
-        <p>I'm <strong>Ansh Arora</strong>, a first-year B.Tech CS student specialising in <strong>AI/ML at VIT Bhopal</strong>, maintaining a CGPA of 8.1. I build things that matter — constantly improving my skills in AI/ML and working on scalable projects.</p>
-        <p>My go-to is <strong>Python</strong> for anything data or ML related. For competitive programming and algorithmic challenges, I reach for <strong>C++</strong>. I'm deeply invested in understanding how things work under the hood — from data structures to ML models — not just getting them to run.</p>
-        <p>Currently levelling up my skill set and actively share my learning journey on LinkedIn. I'm looking for internship opportunities where I can contribute real value and grow fast.</p>
-
-        <div class="about-exp">
-          <div class="exp-org">Kraaft Entertainment</div>
-          <div class="exp-role">Writer &amp; Content Creator</div>
-          <div class="exp-date">Jan 2025 – Present </div>
-          <ul class="exp-points">
-            <li>Produced technical and non-technical content for digital platforms</li>
-            <li>Collaborated with teams to plan, draft, and deliver structured content</li>
-          </ul>
+        <div class="about-img-container">
+          <img src="ansh_arora_profile.jpg" alt="Ansh Arora Profile" class="about-img"/>
         </div>
       </div>
+
+      <!-- Bio & Achievements/Coursework Column -->
+      <div class="about-mid rv">
+        <p>I'm <strong>Ansh Arora</strong>, a first-year B.Tech CS student specialising in <strong>AI/ML at VIT Bhopal</strong>, maintaining a CGPA of 8.1. I build things that matter — constantly improving my skills in AI/ML and working on scalable projects.</p>
+        <p>My go-to is <strong>Python</strong> for anything data or ML related. For competitive programming and algorithmic challenges, I reach for <strong>C++</strong>. I'm deeply invested in understanding how things work under the hood — from data structures to ML models — not just getting them to run.</p>
+        
+        <div style="margin-top:1.5rem">
+          <div class="sec-label" style="margin-bottom:0.75rem">Relevant Coursework</div>
+          <div class="hero-tags" style="margin-bottom:1.5rem">
+            <span class="tag">Data Structures &amp; Algorithms</span>
+            <span class="tag">Object-Oriented Programming</span>
+            <span class="tag">Database Management Systems</span>
+            <span class="tag">Operating Systems</span>
+            <span class="tag">Machine Learning Fundamentals</span>
+            <span class="tag">Theory of Computation</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="sec-label" style="margin-bottom:0.75rem">Achievements</div>
+          <div style="display:flex; flex-direction:column; gap:0.5rem">
+            <div class="cert-item" style="padding:0.75rem 1rem; margin-bottom:0">
+              <div class="cert-body">
+                <a href="certificates/gssooc%20contributor.png" target="_blank" style="text-decoration:none; color:inherit">
+                  <div class="cert-org2">GirlScript Summer of Code (GSSoC 2026)</div>
+                  <div class="cert-title2" style="font-size:0.82rem">Selected Open-Source Contributor by GS Labs</div>
+                </a>
+              </div>
+            </div>
+            <div class="cert-item" style="padding:0.75rem 1rem; margin-bottom:0">
+              <div class="cert-body">
+                <a href="certificates/summer%20of%20codefest.pdf" target="_blank" style="text-decoration:none; color:inherit">
+                  <div class="cert-org2">Summer of Codefest'25</div>
+                  <div class="cert-title2" style="font-size:0.82rem">Participated as Team The Alchemist Guild</div>
+                </a>
+              </div>
+            </div>
+            <div class="cert-item" style="padding:0.75rem 1rem; margin-bottom:0">
+              <div class="cert-body">
+                <a href="certificates/ai%20zen%20hackathon.png" target="_blank" style="text-decoration:none; color:inherit">
+                  <div class="cert-org2">AI-ZEN Hackathon</div>
+                  <div class="cert-title2" style="font-size:0.82rem">Participated in Adversarial Nibbler Hackathon (Google Crowdsource)</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Education & Certifications Column -->
       <div class="about-right rv-r">
         <div class="edu-card">
           <div class="edu-label">Education</div>
@@ -150,21 +193,146 @@
             <span class="edu-pill">AI/ML Track</span>
           </div>
         </div>
+        
         <div style="margin-top:1.5rem">
           <div class="sec-label" style="margin-bottom:1rem">Certifications</div>
           <div class="cert-item">
+            <div class="cert-icon">🛠️</div>
+            <div class="cert-body">
+              <a href="certificates/service%20now%20certificate.pdf" target="_blank" style="text-decoration:none; color:inherit">
+                <div class="cert-org2">ServiceNow University &amp; AICTE</div>
+                <div class="cert-title2">ServiceNow Virtual Internship (CSA, Agentic AI, Flows)</div>
+              </a>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon">☕</div>
+            <div class="cert-body">
+              <a href="certificates/programming%20in%20java%20vityarthi.png" target="_blank" style="text-decoration:none; color:inherit">
+                <div class="cert-org2">VITyarthi · VIT Bhopal</div>
+                <div class="cert-title2">Programming in Java (Jul 2026)</div>
+              </a>
+            </div>
+          </div>
+          <div class="cert-item">
             <div class="cert-icon">🏛️</div>
             <div class="cert-body">
-              <div class="cert-org2">NPTEL</div>
-              <div class="cert-title2">Programming with Generative AI</div>
+              <a href="certificates/Programming%20with%20Generative%20AI.pdf" target="_blank" style="text-decoration:none; color:inherit">
+                <div class="cert-org2">NPTEL</div>
+                <div class="cert-title2">Programming with Generative AI</div>
+              </a>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon">🐍</div>
+            <div class="cert-body">
+              <div class="cert-org2">Cisco Networking Academy</div>
+              <div class="cert-title2">
+                <a href="certificates/Python_Essentials_1_certificate_ansh-24bai10709-vitbhopal-ac-in_7056eb69-06ec-4e82-aebc-ca3f97edf959.pdf" target="_blank" style="text-decoration:none; color:var(--head); border-bottom: 1px dotted var(--border2)">Python Essentials 1</a> &amp; 
+                <a href="certificates/Python_Essentials_2_certificate_ansh-24bai10709-vitbhopal-ac-in_f6ebb391-ee5b-463b-88a3-bde8c0ccc4c4.pdf" target="_blank" style="text-decoration:none; color:var(--head); border-bottom: 1px dotted var(--border2)">Essentials 2</a>
+              </div>
             </div>
           </div>
           <div class="cert-item">
             <div class="cert-icon">🎓</div>
             <div class="cert-body">
-              <div class="cert-org2">Johns Hopkins University · Coursera</div>
-              <div class="cert-title2">HTML, CSS &amp; JavaScript for Web Developers</div>
+              <a href="certificates/HTML%20CSS%20JS%20john%20hopkins.pdf" target="_blank" style="text-decoration:none; color:inherit">
+                <div class="cert-org2">Johns Hopkins University · Coursera</div>
+                <div class="cert-title2">HTML, CSS &amp; JavaScript for Web Developers</div>
+              </a>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-wrap">
+    <div class="rv" style="text-align:center;margin-bottom:0">
+      <div class="sec-label" style="justify-content:center">Journey</div>
+      <div class="sec-title">WORK EXPERIENCE</div>
+    </div>
+    <div class="exp-timeline">
+      <!-- Role 1: FlyRank AI -->
+      <div class="exp-item rv">
+        <div class="exp-dot">🚀</div>
+        <div class="exp-content">
+          <div class="exp-header">
+            <div class="exp-title-box">
+              <h3>Machine Learning Engineering Intern</h3>
+              <div class="exp-company">FlyRank AI</div>
+            </div>
+            <div class="exp-duration">Jul 2026 – Sept 2026 (Incoming)</div>
+          </div>
+          <div class="exp-body">
+            <ul>
+              <li>Incoming ML Engineering Intern working on AI/ML systems and applied machine learning workflows.</li>
+              <li>Will contribute to model development, data pipelines, and production AI features at FlyRank Corp.</li>
+            </ul>
+          </div>
+          <div class="exp-tags">
+            <span>AI/ML</span>
+            <span>Applied ML</span>
+            <span>Model Development</span>
+            <span>Data Pipelines</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Role 2: Navodita Infotech -->
+      <div class="exp-item rv">
+        <div class="exp-dot">🧠</div>
+        <div class="exp-content">
+          <div class="exp-header">
+            <div class="exp-title-box">
+              <h3>Artificial Intelligence Intern</h3>
+              <div class="exp-company">
+                <a href="certificates/offer%20letter%20navodita.pdf" target="_blank" style="text-decoration:none; color:inherit; border-bottom: 1px dotted var(--border2)">Navodita Infotech ↗</a>
+              </div>
+            </div>
+            <div class="exp-duration">May 2025 – Jun 2025</div>
+          </div>
+          <div class="exp-body">
+            <ul>
+              <li>Worked on AI-driven tasks involving data handling, model exploration, and applied machine learning techniques.</li>
+              <li>Researched and implemented solutions leveraging Python-based AI tools and frameworks.</li>
+              <li>Collaborated with the team to document findings and contribute to project deliverables.</li>
+            </ul>
+          </div>
+          <div class="exp-tags">
+            <span>Python</span>
+            <span>Applied AI</span>
+            <span>Model Exploration</span>
+            <span>Data Handling</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Role 3: Kraaft Entertainment -->
+      <div class="exp-item rv">
+        <div class="exp-dot">✍️</div>
+        <div class="exp-content">
+          <div class="exp-header">
+            <div class="exp-title-box">
+              <h3>Writer &amp; Content Creator</h3>
+              <div class="exp-company">Kraaft Entertainment</div>
+            </div>
+            <div class="exp-duration">Jan 2025 – Present</div>
+          </div>
+          <div class="exp-body">
+            <ul>
+              <li>Produced technical and non-technical content for digital platforms and online campaigns.</li>
+              <li>Conducted research and transformed complex topics into reader-friendly content.</li>
+            </ul>
+          </div>
+          <div class="exp-tags">
+            <span>Technical Writing</span>
+            <span>Content Strategy</span>
+            <span>Digital Platforms</span>
+            <span>Research</span>
           </div>
         </div>
       </div>
@@ -180,65 +348,161 @@
       <div class="sec-title">WHAT I USE</div>
     </div>
     <div class="skills-layout">
-      <div class="skill-block rv">
-        <div class="sb-head">
-          <div class="sb-icon">🐍</div>
-          <div class="sb-name">Languages</div>
+      <!-- Left Column: Skill progress lists -->
+      <div class="skills-left-col" style="display:flex; flex-direction:column; gap:1.5rem">
+        <!-- Languages & Databases -->
+        <div class="skill-block rv">
+          <div class="sb-head">
+            <div class="sb-icon">🐍</div>
+            <div class="sb-name">Languages &amp; Databases</div>
+          </div>
+          
+          <div class="skill-progress-wrap">
+            <div class="skill-name-percent"><span>Python</span><span>92%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width: 92%;"></div></div>
+          </div>
+          <div class="skill-progress-wrap">
+            <div class="skill-name-percent"><span>C++ (DSA)</span><span>88%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width: 88%;"></div></div>
+          </div>
+          <div class="skill-progress-wrap">
+            <div class="skill-name-percent"><span>SQL (PostgreSQL/MySQL)</span><span>85%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width: 85%;"></div></div>
+          </div>
+          <div class="skill-progress-wrap">
+            <div class="skill-name-percent"><span>JavaScript / TypeScript</span><span>82%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width: 82%;"></div></div>
+          </div>
+          <div class="skill-progress-wrap">
+            <div class="skill-name-percent"><span>Java</span><span>80%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width: 80%;"></div></div>
+          </div>
+          <div class="skill-progress-wrap">
+            <div class="skill-name-percent"><span>HTML / CSS</span><span>90%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width: 90%;"></div></div>
+          </div>
+          
+          <div class="skill-pills" style="margin-top: 1rem;">
+            <span class="sp">PostgreSQL</span>
+            <span class="sp">Supabase</span>
+            <span class="sp">MySQL</span>
+          </div>
         </div>
-        <div class="skill-pills">
-          <span class="sp primary">Python ★</span>
-          <span class="sp primary">C++ (DSA) ★</span>
-          <span class="sp">Java</span>
-          <span class="sp">SQL</span>
-          <span class="sp">JavaScript</span>
+
+        <!-- AI/ML & Libraries -->
+        <div class="skill-block rv">
+          <div class="sb-head">
+            <div class="sb-icon">📊</div>
+            <div class="sb-name">AI/ML &amp; Data Libraries</div>
+          </div>
+          
+          <div class="skill-progress-wrap">
+            <div class="skill-name-percent"><span>Pandas &amp; NumPy</span><span>92%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width: 92%;"></div></div>
+          </div>
+          <div class="skill-progress-wrap">
+            <div class="skill-name-percent"><span>Matplotlib &amp; Plotly</span><span>88%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width: 88%;"></div></div>
+          </div>
+          <div class="skill-progress-wrap">
+            <div class="skill-name-percent"><span>Scikit-learn / XGBoost</span><span>84%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width: 84%;"></div></div>
+          </div>
+          <div class="skill-progress-wrap">
+            <div class="skill-name-percent"><span>ML Model Building &amp; Eval</span><span>82%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width: 82%;"></div></div>
+          </div>
+          <div class="skill-progress-wrap">
+            <div class="skill-name-percent"><span>GenAI APIs &amp; Prompt Eng.</span><span>85%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width: 85%;"></div></div>
+          </div>
+          
+          <div class="skill-pills" style="margin-top: 1rem;">
+            <span class="sp">EDA</span>
+            <span class="sp">Feature Engineering</span>
+            <span class="sp">SHAP</span>
+            <span class="sp">OpenAI API</span>
+            <span class="sp">Google Gemini API</span>
+          </div>
+        </div>
+
+        <!-- Frameworks & Tools -->
+        <div class="skill-block rv">
+          <div class="sb-head">
+            <div class="sb-icon">🌐</div>
+            <div class="sb-name">Frameworks &amp; Developer Tools</div>
+          </div>
+          
+          <div class="skill-progress-wrap">
+            <div class="skill-name-percent"><span>Next.js &amp; React</span><span>84%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width: 84%;"></div></div>
+          </div>
+          <div class="skill-progress-wrap">
+            <div class="skill-name-percent"><span>Node.js &amp; Express.js</span><span>80%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width: 80%;"></div></div>
+          </div>
+          <div class="skill-progress-wrap">
+            <div class="skill-name-percent"><span>Git &amp; GitHub</span><span>88%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width: 88%;"></div></div>
+          </div>
+          <div class="skill-progress-wrap">
+            <div class="skill-name-percent"><span>VS Code &amp; Linux / Postman</span><span>85%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width: 85%;"></div></div>
+          </div>
+          
+          <div class="skill-pills" style="margin-top: 1rem;">
+            <span class="sp">Flask</span>
+            <span class="sp">Streamlit</span>
+            <span class="sp">REST APIs</span>
+            <span class="sp">Vercel</span>
+            <span class="sp">Prisma ORM</span>
+            <span class="sp">Excel</span>
+          </div>
+        </div>
+
+        <!-- CS Fundamentals -->
+        <div class="skill-block rv">
+          <div class="sb-head">
+            <div class="sb-icon">🧠</div>
+            <div class="sb-name">CS Fundamentals</div>
+          </div>
+          
+          <div class="skill-progress-wrap">
+            <div class="skill-name-percent"><span>Data Structures &amp; Algorithms</span><span>88%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width: 88%;"></div></div>
+          </div>
+          <div class="skill-progress-wrap">
+            <div class="skill-name-percent"><span>Object-Oriented Programming (OOP)</span><span>85%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width: 85%;"></div></div>
+          </div>
+          <div class="skill-progress-wrap">
+            <div class="skill-name-percent"><span>Database Management Systems</span><span>82%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width: 82%;"></div></div>
+          </div>
+          <div class="skill-progress-wrap">
+            <div class="skill-name-percent"><span>Operating Systems</span><span>80%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width: 80%;"></div></div>
+          </div>
+          
+          <div class="skill-pills" style="margin-top: 1rem;">
+            <span class="sp">Theory of Computation</span>
+            <span class="sp">Compiler Design</span>
+            <span class="sp">Computer Networks</span>
+          </div>
         </div>
       </div>
-      <div class="skill-block rv">
-        <div class="sb-head">
-          <div class="sb-icon">📊</div>
-          <div class="sb-name">Data &amp; ML</div>
-        </div>
-        <div class="skill-pills">
-          <span class="sp primary">Pandas ★</span>
-          <span class="sp primary">NumPy ★</span>
-          <span class="sp primary">Matplotlib ★</span>
-          <span class="sp">Scikit-learn</span>
-          <span class="sp">Data Cleaning</span>
-          <span class="sp">Visualization</span>
-          <span class="sp">Model Evaluation</span>
-        </div>
-      </div>
-      <div class="skill-block rv">
-        <div class="sb-head">
-          <div class="sb-icon">🌐</div>
-          <div class="sb-name">Web &amp; Tools</div>
-        </div>
-        <div class="skill-pills">
-          <span class="sp">HTML5</span>
-          <span class="sp">CSS3</span>
-          <span class="sp">Flask</span>
-          <span class="sp">REST APIs</span>
-          <span class="sp">Git</span>
-          <span class="sp">GitHub</span>
-          <span class="sp">VS Code</span>
-          <span class="sp">Linux</span>
-          <span class="sp">Postman</span>
-        </div>
-      </div>
-      <div class="skill-block rv">
-        <div class="sb-head">
-          <div class="sb-icon">🧠</div>
-          <div class="sb-name">CS Fundamentals</div>
-        </div>
-        <div class="skill-pills">
-          <span class="sp">Data Structures</span>
-          <span class="sp">Algorithms</span>
-          <span class="sp">OOP</span>
-          <span class="sp">DBMS</span>
-          <span class="sp">Operating Systems</span>
-          <span class="sp">Theory of Computation</span>
-          <span class="sp">Compiler Design</span>
-          <span class="sp">Computer Networks</span>
+
+      <!-- Right Column: Interactive Charts -->
+      <div class="skills-right-col rv">
+        <div class="charts-container">
+          <div class="chart-tabs">
+            <button class="chart-tab active" id="btn-radar" onclick="switchChart('radar')">Domain Competency</button>
+            <button class="chart-tab" id="btn-stack" onclick="switchChart('stack')">Project Stack Density</button>
+          </div>
+          <div class="chart-canvas-box">
+            <canvas id="radarChart"></canvas>
+            <canvas id="stackChart" style="display: none;"></canvas>
+          </div>
         </div>
       </div>
     </div>
@@ -253,42 +517,66 @@
       <div class="sec-title">WHAT I'VE BUILT</div>
     </div>
     <div class="projects-grid">
+      <!-- Project 01: RCA Copilot -->
       <div class="proj-card rv">
         <div class="proj-num">01</div>
-        <div class="proj-icon">🥦</div>
-        <div class="proj-title">NutriSnap</div>
-        <p class="proj-desc">Intelligent nutrition tracking system supporting 50+ food items. Built weekly trend analysis reports using Pandas and Matplotlib. Applied OOP principles and Git version control throughout the codebase.</p>
+        <div class="proj-icon">🔍</div>
+        <div class="proj-title">RCA Copilot</div>
+        <p class="proj-desc">AI-powered incident investigation platform that transforms raw logs and incident descriptions into structured Root Cause Analysis reports in seconds. Implemented multi-stage processing pipelines covering log parsing, anomaly detection, timeline reconstruction, and blast radius analysis with confidence scoring.</p>
         <div class="proj-tech">
-          <span class="pt">Python</span>
-          <span class="pt">Pandas</span>
-          <span class="pt">Matplotlib</span>
-          <span class="pt">OOP</span>
-          <span class="pt">Git</span>
+          <span class="pt">Next.js</span>
+          <span class="pt">Express.js</span>
+          <span class="pt">PostgreSQL</span>
+          <span class="pt">OpenAI API</span>
+          <span class="pt">Prisma</span>
+          <span class="pt">Vercel</span>
         </div>
       </div>
+      
+      <!-- Project 02: StackSensei -->
       <div class="proj-card rv">
         <div class="proj-num">02</div>
-        <div class="proj-icon">🎮</div>
-        <div class="proj-title">Tic-Tac-Toe AI</div>
-        <p class="proj-desc">Console-based game with human vs computer gameplay. Implemented move validation, board rendering, win-condition detection, and turn management logic. Clean, modular Python code.</p>
+        <div class="proj-icon">🧠</div>
+        <div class="proj-title">StackSensei</div>
+        <p class="proj-desc">AI-powered developer productivity platform analyzing entire codebases to explain architecture, tech stack, and application workflow. Integrates Google Gemini API to detect frameworks, APIs, and databases, with interactive AI chat and Supabase authentication.</p>
         <div class="proj-tech">
-          <span class="pt">Python</span>
-          <span class="pt">Algorithms</span>
-          <span class="pt">Game Logic</span>
-          <span class="pt">Randomization</span>
+          <span class="pt">React</span>
+          <span class="pt">TypeScript</span>
+          <span class="pt">Node.js</span>
+          <span class="pt">Express</span>
+          <span class="pt">Supabase</span>
+          <span class="pt">Gemini API</span>
         </div>
       </div>
+      
+      <!-- Project 03: AirPredict NYC -->
       <div class="proj-card rv">
         <div class="proj-num">03</div>
-        <div class="proj-icon">📈</div>
-        <div class="proj-title">Student Performance EDA</div>
-        <p class="proj-desc">Exploratory data analysis on academic performance data using Pandas and Matplotlib. Performed data cleaning, preprocessing, and visualization to extract meaningful trends from raw metrics.</p>
+        <div class="proj-icon">🏡</div>
+        <div class="proj-title">AirPredict NYC</div>
+        <p class="proj-desc">Production-ready ML application predicting NYC Airbnb prices using an ensemble of Linear Regression, Random Forest, and XGBoost. Integrates SHAP waterfall charts for explainability and a KNN-based similar listing recommender on interactive maps.</p>
         <div class="proj-tech">
           <span class="pt">Python</span>
+          <span class="pt">Scikit-learn</span>
+          <span class="pt">XGBoost</span>
+          <span class="pt">SHAP</span>
+          <span class="pt">Streamlit</span>
+          <span class="pt">Plotly</span>
+        </div>
+      </div>
+
+      <!-- Project 04: Data Consolidator -->
+      <div class="proj-card rv">
+        <div class="proj-num">04</div>
+        <div class="proj-icon">📂</div>
+        <div class="proj-title">Data Consolidator</div>
+        <p class="proj-desc">Full-stack web application automating consolidation of 1,000+ spreadsheet records (Excel, CSV, PDF tables) into a unified master workbook. Implements column matching, validation, React/Next.js frontend, and FastAPI/PostgreSQL architecture.</p>
+        <div class="proj-tech">
+          <span class="pt">FastAPI</span>
+          <span class="pt">React</span>
+          <span class="pt">Next.js</span>
+          <span class="pt">PostgreSQL</span>
           <span class="pt">Pandas</span>
-          <span class="pt">Matplotlib</span>
-          <span class="pt">EDA</span>
-          <span class="pt">Data Cleaning</span>
         </div>
       </div>
     </div>
@@ -397,6 +685,7 @@
     <a href="#hero" class="foot-logo">Ansh <em>Arora</em></a>
     <ul class="foot-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#profiles">Profiles</a></li>
@@ -406,6 +695,7 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

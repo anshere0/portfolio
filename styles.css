@@ -1,4 +1,4 @@
-﻿/*
+/*
   Portfolio Stylesheet
   Tech stack: CSS
   Purpose: Visual design, layout, animation, and responsive styles.
@@ -583,8 +583,8 @@ nav {
 
 .about-grid {
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:5rem;
+  grid-template-columns:280px 1.2fr 1fr;
+  gap:3rem;
   align-items:start;
   margin-top:3rem
 }
@@ -860,7 +860,7 @@ nav {
 
 .projects-grid {
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(2,1fr);
   gap:1.5rem;
   margin-top:3rem
 }
@@ -1305,6 +1305,258 @@ footer {
 
 .foot-copy span {
   color:var(--amber)
+}
+
+/* ── PROFILE IMAGE ─────────────────────── */
+.about-img-container {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border-radius: 16px;
+  padding: 8px;
+  background: linear-gradient(135deg, rgba(245,166,35,0.1), rgba(124,58,237,0.1));
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.about-img-container::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 17px;
+  background: linear-gradient(135deg, var(--amber), var(--violet));
+  z-index: -1;
+  opacity: 0.4;
+  filter: blur(8px);
+}
+
+.about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid var(--card2);
+}
+
+/* ── EXPERIENCE SECTION ────────────────── */
+#experience {
+  padding: 7rem 3rem;
+  background: var(--bg);
+}
+
+.exp-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.exp-timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: var(--border2);
+}
+
+.exp-item {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+}
+
+.exp-dot {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--card2);
+  border: 2px solid var(--amber);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  flex-shrink: 0;
+  font-size: 1rem;
+  box-shadow: 0 0 15px rgba(245,166,35,0.2);
+}
+
+.exp-content {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.75rem;
+  flex: 1;
+  transition: all var(--r);
+}
+
+.exp-content:hover {
+  border-color: var(--border2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.exp-title-box h3 {
+  font-size: 1.2rem;
+  color: var(--head);
+  font-weight: 700;
+}
+
+.exp-company {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--amber);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.25rem;
+}
+
+.exp-duration {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text2);
+  background: var(--bg2);
+  padding: 4px 12px;
+  border-radius: 30px;
+  border: 1px solid var(--border);
+}
+
+.exp-body ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.exp-body li {
+  font-size: 0.88rem;
+  color: var(--text2);
+  position: relative;
+  padding-left: 1.25rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.exp-body li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--amber);
+}
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.exp-tags span {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  padding: 3px 8px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--text2);
+}
+
+/* ── SKILLS PERCENTAGES ────────────────── */
+.skill-progress-wrap {
+  margin-bottom: 1.25rem;
+}
+
+.skill-name-percent {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.skill-bar-bg {
+  width: 100%;
+  height: 5px;
+  background: var(--bg2);
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.skill-bar {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--amber), var(--violet));
+  box-shadow: 0 0 6px rgba(245,166,35,0.3);
+  transition: width 1.2s cubic-bezier(.4,0,.2,1);
+}
+
+/* ── CHARTS STYLING ───────────────────── */
+.charts-container {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chart-tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: var(--bg2);
+  padding: 4px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.chart-tab {
+  flex: 1;
+  background: none;
+  border: none;
+  color: var(--text2);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--r);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.chart-tab.active {
+  background: var(--amber);
+  color: var(--bg);
+  font-weight: 700;
+}
+
+.chart-tab:hover:not(.active) {
+  color: var(--amber);
+}
+
+.chart-canvas-box {
+  position: relative;
+  flex: 1;
+  min-height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ── SCROLL REVEAL ─────────────────────── */
