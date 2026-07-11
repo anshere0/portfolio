@@ -770,7 +770,250 @@ nav {
   line-height:1.3
 }
 
+/* ── WEBYOU FEATURE BLOCK ─────────────────────── */
+.webyou-feature {
+  margin-top:3rem;
+  background:var(--card);
+  border:1px solid var(--border2);
+  border-radius:12px;
+  overflow:hidden;
+  position:relative;
+  transition:all var(--r)
+}
+
+.webyou-feature:hover {
+  box-shadow:0 16px 60px rgba(245,166,35,0.1);
+  border-color:rgba(245,166,35,0.4)
+}
+
+.wf-accent-bar {
+  height:3px;
+  background:linear-gradient(90deg,var(--amber),var(--violet),var(--green));
+  width:100%
+}
+
+.wf-inner {
+  display:grid;
+  grid-template-columns:1fr 1.4fr;
+  gap:0;
+}
+
+.wf-left {
+  padding:2rem 2rem 2rem 2rem;
+  border-right:1px solid var(--border);
+  display:flex;
+  flex-direction:column;
+  gap:1rem
+}
+
+.wf-badge {
+  display:inline-flex;
+  align-items:center;
+  gap:0.4rem;
+  font-family:var(--mono);
+  font-size:0.68rem;
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  color:var(--green);
+  background:rgba(16,185,129,0.08);
+  border:1px solid rgba(16,185,129,0.2);
+  padding:4px 12px;
+  border-radius:2px;
+  width:fit-content
+}
+
+.wf-logo-wrap {
+  display:flex;
+  align-items:center;
+  gap:1rem
+}
+
+.wf-logo-icon {
+  width:48px;
+  height:48px;
+  background:linear-gradient(135deg,rgba(245,166,35,0.15),rgba(124,58,237,0.1));
+  border:1px solid var(--border2);
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.4rem;
+  flex-shrink:0
+}
+
+.wf-company {
+  font-size:1.05rem;
+  font-weight:700;
+  color:var(--head);
+  line-height:1.2
+}
+
+.wf-tagline {
+  font-family:var(--mono);
+  font-size:0.65rem;
+  color:var(--text2);
+  letter-spacing:0.05em;
+  margin-top:2px
+}
+
+.wf-role {
+  font-size:1.25rem;
+  font-weight:700;
+  color:var(--amber);
+  line-height:1.2
+}
+
+.wf-meta {
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.5rem
+}
+
+.wf-pill {
+  font-family:var(--mono);
+  font-size:0.68rem;
+  padding:4px 10px;
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:3px;
+  color:var(--text2)
+}
+
+.wf-pill-green {
+  background:rgba(16,185,129,0.08);
+  border-color:rgba(16,185,129,0.25);
+  color:var(--green)
+}
+
+.wf-quote {
+  background:rgba(245,166,35,0.04);
+  border-left:3px solid var(--amber);
+  border-radius:0 6px 6px 0;
+  padding:1rem 1.1rem;
+  font-size:0.82rem;
+  color:var(--text2);
+  line-height:1.8;
+  font-style:italic;
+  position:relative;
+  margin-top:auto
+}
+
+.wf-quote-mark {
+  font-family:var(--display);
+  font-size:2.5rem;
+  color:var(--amber);
+  line-height:0.5;
+  vertical-align:middle;
+  margin-right:0.15rem;
+  opacity:0.5
+}
+
+.wf-quote-attr {
+  display:block;
+  margin-top:0.6rem;
+  font-style:normal;
+  font-family:var(--mono);
+  font-size:0.65rem;
+  color:var(--amber);
+  text-transform:uppercase;
+  letter-spacing:0.08em
+}
+
+.wf-right {
+  padding:2rem;
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem
+}
+
+.wf-responsibilities {
+  display:flex;
+  flex-direction:column;
+  gap:1rem
+}
+
+.wf-resp-head {
+  font-family:var(--mono);
+  font-size:0.68rem;
+  text-transform:uppercase;
+  letter-spacing:0.12em;
+  color:var(--amber);
+  margin-bottom:0.25rem
+}
+
+.wf-resp-item {
+  display:flex;
+  gap:0.9rem;
+  align-items:flex-start;
+  padding:0.9rem 1rem;
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:8px;
+  transition:all var(--r)
+}
+
+.wf-resp-item:hover {
+  border-color:var(--border2);
+  background:rgba(245,166,35,0.03);
+  transform:translateX(3px)
+}
+
+.wf-resp-icon {
+  font-size:1.1rem;
+  width:34px;
+  height:34px;
+  background:rgba(245,166,35,0.08);
+  border-radius:6px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0
+}
+
+.wf-resp-title {
+  font-size:0.85rem;
+  font-weight:600;
+  color:var(--head);
+  margin-bottom:0.2rem
+}
+
+.wf-resp-desc {
+  font-size:0.8rem;
+  color:var(--text2);
+  line-height:1.6;
+  font-weight:300
+}
+
+.wf-skills-row {
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.5rem;
+  margin-top:auto
+}
+
+.wf-skill {
+  font-family:var(--mono);
+  font-size:0.72rem;
+  padding:5px 12px;
+  border-radius:3px;
+  background:rgba(245,166,35,0.07);
+  border:1px solid rgba(245,166,35,0.2);
+  color:var(--amber);
+  transition:all var(--r)
+}
+
+.wf-skill:hover {
+  background:rgba(245,166,35,0.14);
+  transform:translateY(-1px)
+}
+
+@media(max-width:768px){
+  .wf-inner{grid-template-columns:1fr}
+  .wf-left{border-right:none;border-bottom:1px solid var(--border)}
+}
+
 /* ── SKILLS ─────────────────────── */
+
 #skills {
   padding:7rem 3rem;
   background:var(--bg)
