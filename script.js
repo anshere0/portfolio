@@ -199,7 +199,12 @@ function switchChart(chartType) {
   }
 }
 
-// Initialize charts after window loads
-window.addEventListener('DOMContentLoaded', () => {
+// Initialize charts safely
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCharts);
+} else {
   initCharts();
+}
+window.addEventListener('load', () => {
+  if (!radarChart) initCharts();
 });

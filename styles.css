@@ -2076,3 +2076,60 @@ footer {
   visibility: visible !important;
 }
 
+/* Charts Container & Canvas Styling */
+.skills-right-col {
+  width: 100%;
+}
+
+.charts-container {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  background: var(--bg2);
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.chart-tab {
+  flex: 1;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--text2);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--r);
+}
+
+.chart-tab.active {
+  background: var(--amber);
+  color: var(--bg);
+}
+
+.chart-canvas-box {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  min-height: 350px;
+}
+
+.chart-canvas-box canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
