@@ -3,7 +3,14 @@
   Purpose: Loader, scroll progress, mobile menu, reveal animation, resume download, charts initialization, and contact form validation.
 */
 
-window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('ldr').classList.add('gone'),1500)});
+function hideLoader() {
+  const ldr = document.getElementById('ldr');
+  if (ldr && !ldr.classList.contains('gone')) {
+    ldr.classList.add('gone');
+  }
+}
+window.addEventListener('load', () => setTimeout(hideLoader, 800));
+setTimeout(hideLoader, 2500); // Fallback in case window load event is delayed by external scripts
 
 window.addEventListener('scroll',()=>{
   const s=document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
@@ -14,7 +21,7 @@ window.addEventListener('scroll',()=>{
 document.getElementById('ham').addEventListener('click',()=>document.getElementById('mob').classList.toggle('open'));
 function closeMob(){document.getElementById('mob').classList.remove('open')}
 
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:0.1});
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:0.05});
 document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el=>obs.observe(el));
 
 document.getElementById('dlResume').addEventListener('click',()=>{
