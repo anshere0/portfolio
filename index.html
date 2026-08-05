@@ -578,12 +578,28 @@
       <div class="sec-title">WHAT I'VE BUILT</div>
     </div>
     <div class="projects-grid">
-      <!-- Project 01: RCA Copilot -->
+      <!-- Project 01: RAGForge -->
       <div class="proj-card rv">
         <div class="proj-num">01</div>
+        <div class="proj-icon">⚡</div>
+        <div class="proj-title">RAGForge SaaS</div>
+        <p class="proj-desc">Multi-tenant RAG SaaS platform enabling businesses to deploy branded AI chatbots grounded in custom documents. Features ~500-word chunking, Gemini text-embedding-004 (768-dim), pgvector cosine similarity retrieval, multi-language auto-detection (Hindi, Tamil, English), and client onboarding.</p>
+        <div class="proj-tech">
+          <span class="pt">Next.js</span>
+          <span class="pt">TypeScript</span>
+          <span class="pt">Supabase</span>
+          <span class="pt">pgvector</span>
+          <span class="pt">Gemini API</span>
+          <span class="pt">Vercel</span>
+        </div>
+      </div>
+
+      <!-- Project 02: RCA Copilot -->
+      <div class="proj-card rv">
+        <div class="proj-num">02</div>
         <div class="proj-icon">🔍</div>
         <div class="proj-title">RCA Copilot</div>
-        <p class="proj-desc">AI-powered incident investigation platform that transforms raw logs and incident descriptions into structured Root Cause Analysis reports in seconds. Implemented multi-stage processing pipelines covering log parsing, anomaly detection, timeline reconstruction, and blast radius analysis with confidence scoring.</p>
+        <p class="proj-desc">AI-powered incident investigation platform that transforms raw logs and incident descriptions into structured Root Cause Analysis reports in under 30s. Implemented 4-stage processing (log parsing, anomaly detection, timeline reconstruction, blast radius analysis) with evidence scoring.</p>
         <div class="proj-tech">
           <span class="pt">Next.js</span>
           <span class="pt">Express.js</span>
@@ -593,10 +609,59 @@
           <span class="pt">Vercel</span>
         </div>
       </div>
-      
-      <!-- Project 02: StackSensei -->
+
+      <!-- Project 03: LikhAI -->
       <div class="proj-card rv">
-        <div class="proj-num">02</div>
+        <div class="proj-num">03</div>
+        <div class="proj-icon">✍️</div>
+        <div class="proj-title">LikhAI <span style="font-size:0.75rem; color:#F5A623; border: 1px solid rgba(245, 166, 35, 0.3); padding:2px 8px; border-radius:12px; margin-left:6px;">In Progress</span></div>
+        <p class="proj-desc">AI-powered handwriting synthesis platform generating realistic handwritten documents by learning personal writing styles. Uses a vector stroke-based generation pipeline rather than static fonts for natural variations in letter formation, line flow, and slant, exporting high-fidelity PDFs and PNGs.</p>
+        <div class="proj-tech">
+          <span class="pt">PyTorch</span>
+          <span class="pt">OpenCV</span>
+          <span class="pt">FastAPI</span>
+          <span class="pt">React</span>
+          <span class="pt">TypeScript</span>
+          <span class="pt">Tailwind CSS</span>
+        </div>
+      </div>
+
+      <!-- Project 04: GridGuard AI -->
+      <div class="proj-card rv">
+        <div class="proj-num">04</div>
+        <div class="proj-icon">⚡</div>
+        <div class="proj-title">GridGuard AI <span style="font-size:0.75rem; color:#F5A623; border: 1px solid rgba(245, 166, 35, 0.3); padding:2px 8px; border-radius:12px; margin-left:6px;">Actively Building</span></div>
+        <p class="proj-desc">Intelligent smart grid monitoring platform that detects electricity theft and predicts transformer failures using ML models (XGBoost/Scikit-learn). Features real-time grid health monitoring, interactive GIS heatmaps (Leaflet/OpenStreetMap), and smart meter IoT telemetry integration.</p>
+        <div class="proj-tech">
+          <span class="pt">Next.js</span>
+          <span class="pt">FastAPI</span>
+          <span class="pt">Python</span>
+          <span class="pt">XGBoost</span>
+          <span class="pt">PostgreSQL</span>
+          <span class="pt">Leaflet</span>
+          <span class="pt">Docker</span>
+        </div>
+      </div>
+
+      <!-- Project 05: CI/CD AI Pipeline -->
+      <div class="proj-card rv">
+        <div class="proj-num">05</div>
+        <div class="proj-icon">🛠️</div>
+        <div class="proj-title">CI/CD AI Pipeline</div>
+        <p class="proj-desc">Automated AI debugging agent capturing GitHub webhook failure events, ingesting pipeline errors via Express.js, and auto-generating code fixes via Gemini API. Tests fixes inside Docker sandbox and automatically opens validated PRs to close the debugging loop without human intervention.</p>
+        <div class="proj-tech">
+          <span class="pt">GitHub Actions</span>
+          <span class="pt">Express.js</span>
+          <span class="pt">Gemini API</span>
+          <span class="pt">Docker</span>
+          <span class="pt">PostgreSQL</span>
+          <span class="pt">Next.js</span>
+        </div>
+      </div>
+
+      <!-- Project 06: StackSensei -->
+      <div class="proj-card rv">
+        <div class="proj-num">06</div>
         <div class="proj-icon">🧠</div>
         <div class="proj-title">StackSensei</div>
         <p class="proj-desc">AI-powered developer productivity platform analyzing entire codebases to explain architecture, tech stack, and application workflow. Integrates Google Gemini API to detect frameworks, APIs, and databases, with interactive AI chat and Supabase authentication.</p>
@@ -609,10 +674,10 @@
           <span class="pt">Gemini API</span>
         </div>
       </div>
-      
-      <!-- Project 03: AirPredict NYC -->
+
+      <!-- Project 07: AirPredict NYC -->
       <div class="proj-card rv">
-        <div class="proj-num">03</div>
+        <div class="proj-num">07</div>
         <div class="proj-icon">🏡</div>
         <div class="proj-title">AirPredict NYC</div>
         <p class="proj-desc">Production-ready ML application predicting NYC Airbnb prices using an ensemble of Linear Regression, Random Forest, and XGBoost. Integrates SHAP waterfall charts for explainability and a KNN-based similar listing recommender on interactive maps.</p>
@@ -623,21 +688,6 @@
           <span class="pt">SHAP</span>
           <span class="pt">Streamlit</span>
           <span class="pt">Plotly</span>
-        </div>
-      </div>
-
-      <!-- Project 04: Data Consolidator -->
-      <div class="proj-card rv">
-        <div class="proj-num">04</div>
-        <div class="proj-icon">📂</div>
-        <div class="proj-title">Data Consolidator</div>
-        <p class="proj-desc">Full-stack web application automating consolidation of 1,000+ spreadsheet records (Excel, CSV, PDF tables) into a unified master workbook. Implements column matching, validation, React/Next.js frontend, and FastAPI/PostgreSQL architecture.</p>
-        <div class="proj-tech">
-          <span class="pt">FastAPI</span>
-          <span class="pt">React</span>
-          <span class="pt">Next.js</span>
-          <span class="pt">PostgreSQL</span>
-          <span class="pt">Pandas</span>
         </div>
       </div>
     </div>
@@ -757,6 +807,8 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
