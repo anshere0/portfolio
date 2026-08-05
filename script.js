@@ -52,74 +52,9 @@ const el=document.querySelector('.hc-file');
 setInterval(()=>{li=(li+1)%lines.length;el.style.opacity='0';setTimeout(()=>{el.textContent=lines[li];el.style.opacity='1';},300)},3000);
 el.style.transition='opacity 0.3s';
 
-// GSAP Animations & UI/UX Pro Max Enhancements
-window.addEventListener('DOMContentLoaded', () => {
-  if (typeof gsap !== 'undefined') {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Hero Section Reveal Timeline
-    const heroTl = gsap.timeline();
-    heroTl.from('.hero-label', { opacity: 0, y: -20, duration: 0.6, ease: 'power3.out' })
-          .from('.hero-name', { opacity: 0, y: 30, duration: 0.8, ease: 'power4.out' }, '-=0.3')
-          .from('.hero-tagline', { opacity: 0, y: 20, duration: 0.6, ease: 'power3.out' }, '-=0.4')
-          .from('.hero-tags .tag', { opacity: 0, scale: 0.8, stagger: 0.1, duration: 0.4, ease: 'back.out(1.7)' }, '-=0.3')
-          .from('.hero-btns', { opacity: 0, y: 20, duration: 0.5, ease: 'power3.out' }, '-=0.2')
-          .from('.hero-card', { opacity: 0, x: 40, duration: 0.8, ease: 'power3.out' }, '-=0.6');
-
-    // ScrollTrigger for Section Headers
-    gsap.utils.toArray('.sec-title').forEach(title => {
-      gsap.from(title, {
-        scrollTrigger: {
-          trigger: title,
-          start: 'top 85%',
-        },
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        ease: 'power3.out'
-      });
-    });
-
-    // ScrollTrigger for Project Cards Stagger
-    gsap.from('.proj-card', {
-      scrollTrigger: {
-        trigger: '.projects-grid',
-        start: 'top 80%',
-      },
-      opacity: 0,
-      y: 50,
-      stagger: 0.15,
-      duration: 0.8,
-      ease: 'power3.out'
-    });
-
-    // ScrollTrigger for Skill Cards
-    gsap.from('.skill-block', {
-      scrollTrigger: {
-        trigger: '.skills-left-col',
-        start: 'top 80%',
-      },
-      opacity: 0,
-      x: -40,
-      stagger: 0.15,
-      duration: 0.7,
-      ease: 'power3.out'
-    });
-
-    // Experience Items Entrance
-    gsap.from('.exp-item', {
-      scrollTrigger: {
-        trigger: '.exp-timeline',
-        start: 'top 80%',
-      },
-      opacity: 0,
-      x: 40,
-      stagger: 0.2,
-      duration: 0.8,
-      ease: 'power3.out'
-    });
-  }
-});
+// Scroll reveal using native IntersectionObserver
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:0.01});
+document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el=>obs.observe(el));
 
 // Chart.js Data Visualizations
 let radarChart;

@@ -2069,28 +2069,10 @@ footer {
   pointer-events: none;
 }
 
-/* Scroll reveal helper styles */
-.rv, .rv-l, .rv-r {
-  opacity: 1; /* Default to visible so page content never disappears if JS fails */
-  transform: translate(0, 0);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.js .rv, .js .rv-l, .js .rv-r {
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-.js .rv-l {
-  transform: translateX(-30px);
-}
-
-.js .rv-r {
-  transform: translateX(30px);
-}
-
-.rv.in, .rv-l.in, .rv-r.in, .js .rv.in, .js .rv-l.in, .js .rv-r.in {
-  opacity: 1;
-  transform: translate(0, 0);
+/* Ensure all section content, skill cards, and project cards are 100% visible */
+.rv, .rv-l, .rv-r, .proj-card, .skill-block, .exp-item {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
 }
 
