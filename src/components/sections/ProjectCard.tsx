@@ -12,6 +12,8 @@ import GridGuardDemo from "@/components/demos/GridGuardDemo";
 import RagForgeDemo from "@/components/demos/RagForgeDemo";
 import DeltaOptionsDemo from "@/components/demos/DeltaOptionsDemo";
 
+import SpotlightCard from "@/components/ui/SpotlightCard";
+
 interface ProjectCardProps {
   project: FeaturedProject;
   onReceiptClick: (metricId: string) => void;
@@ -56,7 +58,7 @@ export default function ProjectCard({ project, onReceiptClick }: ProjectCardProp
               href={`/projects/${project.slug}`}
               className="inline-flex items-center gap-1.5 font-body text-xs font-medium text-[var(--accent)] hover:underline underline-offset-4"
             >
-              Open case study blueprint →
+              Open case study
             </Link>
           </div>
         </div>
@@ -94,54 +96,56 @@ export default function ProjectCard({ project, onReceiptClick }: ProjectCardProp
             )}
           </div>
 
-          {/* Telemetry Metric & Engineering Reality Block */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-5 rounded-[8px] bg-[var(--bg-raised)] hairline">
-            {/* Measured Metric */}
-            {primaryMetric && (
-              <div className="space-y-1">
-                <span className="text-xs text-[var(--text-muted)] block">
-                  Measured telemetry
-                </span>
-                <Metric
-                  value={primaryMetric.value}
-                  label={primaryMetric.label}
-                  onReceiptClick={() => onReceiptClick(primaryMetric.id)}
-                />
-              </div>
-            )}
+          {/* Telemetry Metric & Engineering Reality Block with Spotlight Beam */}
+          <SpotlightCard className="p-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Measured Metric */}
+              {primaryMetric && (
+                <div className="space-y-1">
+                  <span className="text-xs text-[var(--text-muted)] block">
+                    Measured telemetry
+                  </span>
+                  <Metric
+                    value={primaryMetric.value}
+                    label={primaryMetric.label}
+                    onReceiptClick={() => onReceiptClick(primaryMetric.id)}
+                  />
+                </div>
+              )}
 
-            {/* Source Repo & Status */}
-            <div className="space-y-1 flex flex-col justify-between">
-              <span className="text-xs text-[var(--text-muted)] block">
-                Sources
-              </span>
-              <div className="flex items-center gap-4 text-xs font-body">
-                {project.links.source && (
-                  <a
-                    href={project.links.source}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[var(--text)] hover:text-[var(--accent)] underline underline-offset-4"
-                  >
-                    Source code on GitHub
-                  </a>
-                )}
-                {project.links.live && (
-                  <a
-                    href={project.links.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[var(--text)] hover:text-[var(--accent)] underline underline-offset-4"
-                  >
-                    Live deployment
-                  </a>
-                )}
+              {/* Source Repo & Status */}
+              <div className="space-y-1 flex flex-col justify-between">
+                <span className="text-xs text-[var(--text-muted)] block">
+                  Sources
+                </span>
+                <div className="flex items-center gap-4 text-xs font-body">
+                  {project.links.source && (
+                    <a
+                      href={project.links.source}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[var(--text)] hover:text-[var(--accent)] underline underline-offset-4"
+                    >
+                      Source code on GitHub
+                    </a>
+                  )}
+                  {project.links.live && (
+                    <a
+                      href={project.links.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[var(--text)] hover:text-[var(--accent)] underline underline-offset-4"
+                    >
+                      Live deployment
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
+          </SpotlightCard>
 
-          {/* Engineering Post-Mortem */}
-          <div className="space-y-3 p-5 rounded-[8px] bg-[var(--bg-sunken)] hairline">
+          {/* Engineering Post-Mortem with Spotlight Beam */}
+          <SpotlightCard className="p-5 space-y-3 bg-[var(--bg-sunken)]">
             <div>
               <span className="font-semibold text-xs text-[var(--text)] block mb-1">
                 What broke &amp; how I solved it:
@@ -159,7 +163,7 @@ export default function ProjectCard({ project, onReceiptClick }: ProjectCardProp
                 {project.nextStep}
               </p>
             </div>
-          </div>
+          </SpotlightCard>
         </div>
       </div>
     </article>

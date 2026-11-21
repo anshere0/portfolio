@@ -24,10 +24,18 @@ export default function Footer() {
         <span>•</span>
         <button
           type="button"
+          onClick={() => window.dispatchEvent(new KeyboardEvent("keydown", { key: "u" }))}
+          className="underline hover:text-[var(--text)] transition-colors cursor-pointer text-emerald-400"
+        >
+          Under the hood (u)
+        </button>
+        <span>•</span>
+        <button
+          type="button"
           onClick={triggerVitals}
           className="underline hover:text-[var(--text)] transition-colors cursor-pointer"
         >
-          Performance telemetry (v)
+          Core Vitals (v)
         </button>
       </div>
     </footer>

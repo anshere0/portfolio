@@ -3,6 +3,7 @@ import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 import { PRE_PAINT_THEME_SCRIPT } from "@/lib/theme";
 import { CANONICAL_SITE_URL } from "@/lib/site";
 import VitalsHud from "@/components/features/VitalsHud";
+import UnderTheHoodModal from "@/components/features/UnderTheHoodModal";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -119,6 +120,7 @@ export default function RootLayout({
         </a>
         {children}
         <VitalsHud />
+        <UnderTheHoodModal />
       </body>
     </html>
   );

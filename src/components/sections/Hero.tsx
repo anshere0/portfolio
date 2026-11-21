@@ -4,16 +4,27 @@ import React, { useState, useEffect } from "react";
 import QueryField from "@/components/features/QueryField";
 import Button from "@/components/ui/Button";
 
+const GREETINGS = ["Hello", "नमस्ते", "Welcome"];
+
 export default function Hero() {
   const [showHint, setShowHint] = useState(false);
+  const [greetingIndex, setGreetingIndex] = useState(0);
 
   useEffect(() => {
+    // Language-cycling greeting
+    const greetingInterval = setInterval(() => {
+      setGreetingIndex((prev) => (prev + 1) % GREETINGS.length);
+    }, 2400);
+
     // 2-second delayed hint per docs/06_CONTENT.md
     const timer = setTimeout(() => {
       setShowHint(true);
     }, 2000);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearInterval(greetingInterval);
+      clearTimeout(timer);
+    };
   }, []);
 
   return (
@@ -27,6 +38,16 @@ export default function Hero() {
 
       {/* Hero content container sitting in the calm zone (bottom-left) */}
       <div className="relative z-10 pointer-events-none max-w-3xl">
+        {/* Playful language-cycling greeting badge */}
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--bg-sunken)]/80 hairline text-xs font-mono text-[var(--accent)] mb-3 pointer-events-auto backdrop-blur-md shadow-sm">
+          <span className="w-1.5 h-1.5 rounded-full bg-[var(--signal)] animate-pulse" />
+          <span className="transition-opacity duration-300 font-semibold">
+            {GREETINGS[greetingIndex]}
+          </span>
+          <span className="text-[var(--text-muted)]">·</span>
+          <span className="text-[var(--text-muted)] text-[11px]">Systems &amp; Telemetry</span>
+        </div>
+
         {/* Real DOM H1 headline */}
         <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[var(--text)] pointer-events-auto">
           Ansh Arora
@@ -58,15 +79,12 @@ export default function Hero() {
         <div
           role="status"
           aria-live="polite"
-          className={`mt-6 inline-flex items-center gap-2 font-mono text-xs text-[var(--accent)] transition-opacity duration-700 pointer-events-auto ${
+          className={`mt-12 transition-opacity duration-700 font-data text-xs text-[var(--text-muted)] flex items-center gap-2 pointer-events-auto ${
             showHint ? "opacity-100" : "opacity-0"
           }`}
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse" />
-          <span className="hidden sm:inline">
-            Move your cursor. You're the search query.
-          </span>
-          <span className="sm:hidden">Drag to search the topology field.</span>
+          <span>Move cursor across the canvas to query nodes · Click node to inspect</span>
         </div>
       </div>
     </section>
