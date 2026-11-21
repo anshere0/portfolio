@@ -68,12 +68,13 @@ export default function ContactSection() {
     >
       {/* Header */}
       <div className="max-w-3xl">
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text)] tracking-tight">
-          Contact.
+        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight">
+          Let&apos;s build{" "}
+          <span className="text-gradient-coral">something together.</span>
         </h2>
         <p className="mt-3 text-base sm:text-lg text-[var(--text-muted)] font-body leading-relaxed">
           Open to software engineering and applied machine learning internships and roles.
-          I read every message sent here.
+          Drop a note below or reach out directly.
         </p>
       </div>
 

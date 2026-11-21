@@ -13,16 +13,15 @@ export default function WorkSection() {
     <section
       id="work"
       aria-label="Featured Systems & Engineering Projects"
-      className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto hairline-t"
+      className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto hairline-t space-y-12"
     >
       {/* Work Block Header */}
-      <div className="max-w-3xl mb-12">
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text)] tracking-tight">
-          Working systems, not templates.
+      <div className="max-w-3xl">
+        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight">
+          Stuff I&apos;ve built.
         </h2>
         <p className="mt-3 text-base sm:text-lg text-[var(--text-muted)] font-body leading-relaxed">
-          Four systems built end to end. Each has a runnable client-side demo and
-          the telemetry numbers I measured, with verifiable sources.
+          Four real systems with interactive client-side simulations you can test directly below.
         </p>
       </div>
 

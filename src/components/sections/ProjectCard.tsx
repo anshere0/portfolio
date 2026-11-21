@@ -11,7 +11,6 @@ import NseScannerDemo from "@/components/demos/NseScannerDemo";
 import GridGuardDemo from "@/components/demos/GridGuardDemo";
 import RagForgeDemo from "@/components/demos/RagForgeDemo";
 import DeltaOptionsDemo from "@/components/demos/DeltaOptionsDemo";
-
 import SpotlightCard from "@/components/ui/SpotlightCard";
 
 interface ProjectCardProps {
@@ -37,11 +36,11 @@ export default function ProjectCard({ project, onReceiptClick }: ProjectCardProp
           <div className="space-y-2">
             <h3
               id={`heading-${project.slug}`}
-              className="font-display text-2xl sm:text-3xl font-bold text-[var(--text)] tracking-tight leading-tight"
+              className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-tight"
             >
               {project.name}
             </h3>
-            <p className="text-sm text-[var(--text-muted)] font-body">
+            <p className="text-sm sm:text-base text-[var(--signal)] font-body font-medium">
               {project.tagline}
             </p>
           </div>
@@ -52,18 +51,38 @@ export default function ProjectCard({ project, onReceiptClick }: ProjectCardProp
             activeStageIndex={activeStage}
           />
 
-          {/* Deep Case Study Link */}
-          <div className="pt-2">
+          {/* Action Links */}
+          <div className="pt-3 flex flex-wrap items-center gap-4">
             <Link
               href={`/projects/${project.slug}`}
-              className="inline-flex items-center gap-1.5 font-body text-xs font-medium text-[var(--accent)] hover:underline underline-offset-4"
+              className="px-4 py-2 rounded-full bg-[var(--accent)] text-[var(--accent-ink)] font-body text-xs font-bold hover:brightness-110 transition-all shadow-md"
             >
               Open case study
             </Link>
+            {project.links.source && (
+              <a
+                href={project.links.source}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-mono text-[var(--text-muted)] hover:text-white transition-colors"
+              >
+                GitHub
+              </a>
+            )}
+            {project.links.live && (
+              <a
+                href={project.links.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-mono text-[var(--signal)] hover:underline"
+              >
+                Live demo
+              </a>
+            )}
           </div>
         </div>
 
-        {/* --- RIGHT COLUMN: Demo, Summary, Telemetry & Post-Mortem (lg:col-span-8) --- */}
+        {/* --- RIGHT COLUMN: Interactive Demo, Summary, & Telemetry (lg:col-span-8) --- */}
         <div className="lg:col-span-8 space-y-6">
           {/* Summary & Tags */}
           <div className="space-y-4">
@@ -96,14 +115,13 @@ export default function ProjectCard({ project, onReceiptClick }: ProjectCardProp
             )}
           </div>
 
-          {/* Telemetry Metric & Engineering Reality Block with Spotlight Beam */}
-          <SpotlightCard className="p-5">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Measured Metric */}
-              {primaryMetric && (
+          {/* Key Measured Achievement Block with Spotlight Beam */}
+          {primaryMetric && (
+            <SpotlightCard className="p-5 bg-[#121420]/90">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="space-y-1">
                   <span className="text-xs text-[var(--text-muted)] block">
-                    Measured telemetry
+                    Telemetry measured in production
                   </span>
                   <Metric
                     value={primaryMetric.value}
@@ -111,59 +129,12 @@ export default function ProjectCard({ project, onReceiptClick }: ProjectCardProp
                     onReceiptClick={() => onReceiptClick(primaryMetric.id)}
                   />
                 </div>
-              )}
-
-              {/* Source Repo & Status */}
-              <div className="space-y-1 flex flex-col justify-between">
-                <span className="text-xs text-[var(--text-muted)] block">
-                  Sources
-                </span>
-                <div className="flex items-center gap-4 text-xs font-body">
-                  {project.links.source && (
-                    <a
-                      href={project.links.source}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[var(--text)] hover:text-[var(--accent)] underline underline-offset-4"
-                    >
-                      Source code on GitHub
-                    </a>
-                  )}
-                  {project.links.live && (
-                    <a
-                      href={project.links.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[var(--text)] hover:text-[var(--accent)] underline underline-offset-4"
-                    >
-                      Live deployment
-                    </a>
-                  )}
+                <div className="text-xs font-mono text-[var(--text-muted)]">
+                  Benchmark date: {primaryMetric.date}
                 </div>
               </div>
-            </div>
-          </SpotlightCard>
-
-          {/* Engineering Post-Mortem with Spotlight Beam */}
-          <SpotlightCard className="p-5 space-y-3 bg-[var(--bg-sunken)]">
-            <div>
-              <span className="font-semibold text-xs text-[var(--text)] block mb-1">
-                What broke &amp; how I solved it:
-              </span>
-              <p className="text-xs sm:text-sm text-[var(--text-muted)] font-body leading-relaxed">
-                {project.whatBroke}
-              </p>
-            </div>
-
-            <div className="pt-2 border-t border-[var(--line)]">
-              <span className="font-semibold text-xs text-[var(--text)] block mb-1">
-                What&apos;s next:
-              </span>
-              <p className="text-xs sm:text-sm text-[var(--text-muted)] font-body leading-relaxed">
-                {project.nextStep}
-              </p>
-            </div>
-          </SpotlightCard>
+            </SpotlightCard>
+          )}
         </div>
       </div>
     </article>

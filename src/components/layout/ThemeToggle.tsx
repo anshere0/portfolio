@@ -4,26 +4,26 @@ import React, { useEffect, useState } from "react";
 import { THEME_STORAGE_KEY, Theme } from "@/lib/theme";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("blueprint");
+  const [theme, setTheme] = useState<Theme>("obsidian");
 
   useEffect(() => {
     try {
       const activeTheme =
         (document.documentElement.getAttribute("data-theme") as Theme) ||
-        "blueprint";
-      setTheme(activeTheme);
+        "obsidian";
+      setTheme(activeTheme === "midnight" ? "midnight" : "obsidian");
     } catch {
       // SSR fallback
     }
   }, []);
 
   const toggleTheme = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const nextTheme: Theme = theme === "blueprint" ? "night" : "blueprint";
+    const nextTheme: Theme = theme === "obsidian" ? "midnight" : "obsidian";
 
     const applyTheme = () => {
       setTheme(nextTheme);
       document.documentElement.setAttribute("data-theme", nextTheme);
-      document.documentElement.classList.toggle("dark", nextTheme === "night");
+      document.documentElement.classList.add("dark");
       try {
         localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
       } catch {
@@ -80,15 +80,15 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       className="inline-flex items-center gap-2 px-3 py-1 rounded-[999px] hairline bg-[var(--bg-sunken)]/60 text-xs font-body text-[var(--text-muted)] hover:text-[var(--text)] transition-colors cursor-pointer select-none"
-      title={`Switch to ${theme === "blueprint" ? "Night" : "Blueprint"} theme`}
+      title={`Switch to ${theme === "obsidian" ? "Midnight" : "Obsidian"} theme`}
       aria-label={`Toggle theme, currently ${theme}`}
     >
       <span
         className={`w-2 h-2 rounded-full ${
-          theme === "blueprint" ? "bg-[var(--accent)]" : "bg-[var(--signal)]"
+          theme === "obsidian" ? "bg-[var(--accent)]" : "bg-[var(--signal)]"
         }`}
       />
-      <span className="capitalize">{theme === "blueprint" ? "Blueprint" : "Night"}</span>
+      <span className="capitalize">{theme === "obsidian" ? "Obsidian" : "Midnight"}</span>
     </button>
   );
 }

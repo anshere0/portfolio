@@ -3,37 +3,33 @@ import Hero from "@/components/sections/Hero";
 import WorkSection from "@/components/sections/WorkSection";
 import AskSection from "@/components/sections/AskSection";
 import PracticeSection from "@/components/sections/PracticeSection";
-import WritingSection from "@/components/sections/WritingSection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
     <>
-      {/* Sticky blueprint header */}
+      {/* Sticky modern header */}
       <Header />
 
-      <main id="main-content" className="flex-1">
-        {/* Phase 2: Hero Section with 2D Canvas Topology Query Field */}
+      <main id="main-content" className="flex-1 bg-[#0A0B10]">
+        {/* Hero Section with Interactive 2D Canvas Topology Query Field */}
         <Hero />
 
-        {/* Phase 3: Work Block (Sticky Pipeline Rails, Runnable Demos, Receipts) */}
+        {/* Work Block (Clean Project Cards, 3D Spotlight, Runnable Demos) */}
         <WorkSection />
 
-        {/* Phase 4: Ask Ansh Retrieval Box (Streaming RAG Engine) */}
+        {/* Ask Ansh Retrieval Box (Live AI-powered RAG Engine) */}
         <AskSection />
 
-        {/* Phase 5: Observable Practice (Load Curve, Spans Waterfall, Evidence Matrix) */}
+        {/* Observable Practice: 3D Three.js Commit City, Velocity Toolkit Marquee & Spans */}
         <PracticeSection />
 
-        {/* Phase 6: System Design Notes & Post-Mortems */}
-        <WritingSection />
-
-        {/* Phase 6: Direct Transmission Channels & Contact Form */}
+        {/* Direct Contact Channels & Transmission Form */}
         <ContactSection />
       </main>
 
-      {/* Blueprint Footer */}
+      {/* Modern Footer */}
       <Footer />
     </>
   );

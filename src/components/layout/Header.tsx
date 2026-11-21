@@ -9,7 +9,6 @@ const NAV_LINKS = [
   { label: "Work", href: "#work" },
   { label: "Ask", href: "#ask" },
   { label: "Practice", href: "#practice" },
-  { label: "Writing", href: "#writing" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -26,9 +25,9 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-40 transition-colors duration-200 ${
+      className={`sticky top-0 z-40 transition-all duration-200 ${
         isScrolled
-          ? "bg-[var(--bg-raised)]/95 backdrop-blur-md hairline-b"
+          ? "bg-[#0A0B10]/85 backdrop-blur-xl border-b border-white/[0.08] shadow-lg shadow-black/20"
           : "bg-transparent"
       }`}
     >
@@ -36,18 +35,19 @@ export default function Header() {
         {/* Brand Name / Title */}
         <Link
           href="/"
-          className="font-display font-semibold text-base sm:text-lg text-[var(--text)] tracking-tight hover:text-[var(--accent)] transition-colors"
+          className="font-display font-bold text-base sm:text-lg text-white tracking-tight hover:text-[var(--signal)] transition-colors flex items-center gap-2"
         >
-          {SITE_CONFIG.name}
+          <span className="w-2 h-2 rounded-full bg-[var(--signal)] animate-pulse" />
+          <span>{SITE_CONFIG.name}</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6 font-body text-sm text-[var(--text-muted)]">
+        <nav className="hidden md:flex items-center gap-7 font-body text-sm text-[var(--text-muted)]">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="hover:text-[var(--text)] transition-colors"
+              className="hover:text-white transition-colors"
             >
               {link.label}
             </a>
@@ -59,7 +59,7 @@ export default function Header() {
           <ThemeToggle />
           <Link
             href="/resume"
-            className="px-3 py-1 text-xs font-medium rounded-[4px] hairline text-[var(--text-muted)] hover:text-[var(--text)] hover:border-[var(--line-strong)] transition-colors"
+            className="px-3.5 py-1.5 rounded-full bg-white/[0.08] hover:bg-white/[0.14] text-xs font-mono text-white transition-colors border border-white/[0.1] font-semibold"
           >
             Résumé
           </Link>

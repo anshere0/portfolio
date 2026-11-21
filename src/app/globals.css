@@ -1,35 +1,44 @@
 @import "tailwindcss";
 
-/* Design System Dual-Theme Tokens (docs/03_DESIGN_SYSTEM.md) */
+/* Sleek Dark Obsidian Design System (Inspired by Pranav Shukla, Ameen Abdullah & Modern Awwwards Portfolios) */
 :root,
-[data-theme="blueprint"] {
-  --bg: #0D2F6B;               /* cyanotype deep */
-  --bg-raised: #123B80;        /* panels */
-  --bg-sunken: #0A2556;        /* wells, code */
-  --line: rgba(255, 255, 255, 0.14);   /* hairlines */
-  --line-strong: rgba(255, 255, 255, 0.34);
-  --grid: rgba(255, 255, 255, 0.06);
-  --text: #F3F6FF;
-  --text-muted: #A9BEE8;       /* AA compliant on --bg */
-  --accent: #FFD84D;           /* marker yellow: links, active nodes, focus ring */
-  --accent-ink: #1A1400;       /* text on accent */
-  --signal: #7FE3FF;           /* data lines, packets */
-  --anomaly: #FF7A8A;          /* alerts, anomaly flags */
+[data-theme="obsidian"],
+[data-theme="blueprint"],
+[data-theme="night"] {
+  --bg: #0A0B10;               /* Deep obsidian dark */
+  --bg-raised: #121420;        /* Sleek card surface */
+  --bg-sunken: #07080C;        /* Sunken wells & code boxes */
+  --line: rgba(255, 255, 255, 0.08);   /* Subtle glowing hairlines */
+  --line-strong: rgba(255, 255, 255, 0.2);
+  --grid: rgba(255, 255, 255, 0.04);
+  --text: #F3F4F8;             /* Crisp bright typography */
+  --text-muted: #8E95AA;       /* High-contrast readable secondary text */
+  --accent: #FF5C4D;           /* Vibrant Coral / Electric Orange */
+  --accent-ink: #0A0B10;       /* Contrast text on accent */
+  --signal: #00F0FF;           /* Electric Cyan / Glowing data */
+  --anomaly: #FF3366;          /* Hot Pink / Anomaly alerts */
+  --purple: #8B5CF6;           /* Electric Violet */
+  --mint: #00F5A0;             /* Emerald Mint */
+  --amber: #FFD600;            /* Bright Lemon Gold */
 }
 
-[data-theme="night"] {
-  --bg: #0F161D;
-  --bg-raised: #17212B;
-  --bg-sunken: #0B1116;
-  --line: rgba(233, 228, 218, 0.14);
-  --line-strong: rgba(233, 228, 218, 0.34);
-  --grid: rgba(233, 228, 218, 0.05);
-  --text: #E9E4DA;
-  --text-muted: #9AA6B2;       /* AA compliant on --bg */
-  --accent: #FFB547;           /* sodium amber */
-  --accent-ink: #1C1100;
-  --signal: #6FD6C4;
-  --anomaly: #FF6B81;
+/* Midnight Slate Alternate */
+[data-theme="midnight"] {
+  --bg: #0E111A;               /* Midnight Slate Dark */
+  --bg-raised: #161B28;
+  --bg-sunken: #080A10;
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: rgba(255, 255, 255, 0.25);
+  --grid: rgba(255, 255, 255, 0.05);
+  --text: #F8FAFC;
+  --text-muted: #94A3B8;
+  --accent: #00F0FF;           /* Neon Cyan */
+  --accent-ink: #0A0B10;
+  --signal: #38BDF8;
+  --anomaly: #F43F5E;
+  --purple: #A855F7;
+  --mint: #34D399;
+  --amber: #FBBF24;
 }
 
 @theme {
@@ -69,9 +78,9 @@ body {
   overflow-x: hidden;
 }
 
-/* Mandatory accessible focus ring on all interactive elements */
+/* Accessible focus ring on all interactive elements */
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--signal);
   outline-offset: 3px;
 }
 
@@ -98,19 +107,31 @@ a:active {
   border-right: 1px solid var(--line);
 }
 
-/* Blueprint Architectural Grid Background */
+/* Architectural Grid Background */
 .blueprint-grid {
   background-image: 
     linear-gradient(to right, var(--grid) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-size: 32px 32px;
 }
 
-.blueprint-grid-major {
-  background-image: 
-    linear-gradient(to right, var(--grid) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
-  background-size: 120px 120px;
+/* Gradient text utilities */
+.text-gradient-coral {
+  background: linear-gradient(135deg, #FF5C4D 0%, #FF8FD0 50%, #2F5BFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #00F0FF 0%, #3B82F6 50%, #8B5CF6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFD600 0%, #FF8A00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Print Stylesheet (@media print for 1-page resume) */
@@ -124,7 +145,7 @@ a:active {
   }
 }
 
-/* View Transitions for Blueprint Wipe (Moment 5) */
+/* View Transitions for Smooth Theme Wipe */
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;

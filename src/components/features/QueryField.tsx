@@ -174,15 +174,12 @@ export default function QueryField() {
       ctx.scale(dpr, dpr);
       ctx.clearRect(0, 0, width, height);
 
-      // Theme-aware tokens reading
-      const isNight = document.documentElement.getAttribute("data-theme") === "night";
-      const tokenAccent = isNight ? "#FFB547" : "#FFD84D";
-      const tokenSignal = isNight ? "#6FD6C4" : "#7FE3FF";
-      const tokenLine = isNight
-        ? "rgba(233, 228, 218, 0.14)"
-        : "rgba(255, 255, 255, 0.14)";
-      const tokenText = isNight ? "#E9E4DA" : "#F3F6FF";
-      const tokenTextMuted = isNight ? "#9AA6B2" : "#A9BEE8";
+      // Vibrant Electric Palette for obsidian dark background
+      const tokenAccent = "#FF5C4D"; // Neon Coral
+      const tokenSignal = "#00F0FF"; // Electric Cyan
+      const tokenLine = "rgba(0, 240, 255, 0.18)"; // Glowing cyan hairlines
+      const tokenText = "#FFFFFF";
+      const tokenTextMuted = "#8E95AA";
 
       // Calculate proximity for each node: w = exp(-d² / 2σ²)
       const sigma = Math.min(width, height) * 0.22;

@@ -49,20 +49,18 @@ export default function Hero() {
         </div>
 
         {/* Real DOM H1 headline */}
-        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[var(--text)] pointer-events-auto">
+        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-white pointer-events-auto">
           Ansh Arora
         </h1>
 
         {/* Primary engineering statement */}
-        <p className="mt-4 sm:mt-5 text-xl sm:text-2xl md:text-3xl font-display font-medium text-[var(--text)] leading-snug pointer-events-auto max-w-2xl">
-          I build real-time streaming telemetry, retrieval pipelines, and financial
-          execution systems, and I publish the measurements.
+        <p className="mt-4 sm:mt-5 text-xl sm:text-2xl md:text-3xl font-display font-medium text-white leading-snug pointer-events-auto max-w-2xl">
+          I build <span className="text-gradient-coral font-bold">real-time trading engines</span>, <span className="text-gradient-cyan font-bold">applied AI systems</span>, and high-performance software.
         </p>
 
         {/* Subheadline (academics & focus) */}
-        <p className="mt-3 sm:mt-4 text-sm sm:text-base text-[var(--text-muted)] font-body pointer-events-auto max-w-xl">
-          Third-year CSE (AI/ML) student at VIT Bhopal, actively
-          engineering distributed systems and practicing core data structures &amp; algorithms.
+        <p className="mt-3 sm:mt-4 text-base sm:text-lg text-[var(--text-muted)] font-body pointer-events-auto max-w-xl">
+          B.Tech Computer Science (AI/ML) at VIT Bhopal (&apos;28). Exploring low-latency distributed systems and machine learning.
         </p>
 
         {/* Action buttons */}
@@ -79,9 +77,8 @@ export default function Hero() {
         <div
           role="status"
           aria-live="polite"
-          className={`mt-12 transition-opacity duration-700 font-data text-xs text-[var(--text-muted)] flex items-center gap-2 pointer-events-auto ${
-            showHint ? "opacity-100" : "opacity-0"
-          }`}
+          className={`mt-12 transition-opacity duration-700 font-data text-xs text-[var(--text-muted)] flex items-center gap-2 pointer-events-auto ${showHint ? "opacity-100" : "opacity-0"
+            }`}
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse" />
           <span>Move cursor across the canvas to query nodes · Click node to inspect</span>

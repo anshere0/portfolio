@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 export default function UnderTheHoodModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [fps, setFps] = useState(60);
-  const [theme, setTheme] = useState("blueprint");
+  const [theme, setTheme] = useState("obsidian");
 
   // Keyboard shortcut 'u' to toggle
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function UnderTheHoodModal() {
   // Sync theme
   useEffect(() => {
     const updateTheme = () => {
-      const active = document.documentElement.getAttribute("data-theme") || "blueprint";
+      const active = document.documentElement.getAttribute("data-theme") || "obsidian";
       setTheme(active);
     };
     updateTheme();
