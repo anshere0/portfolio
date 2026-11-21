@@ -65,7 +65,7 @@ export interface ExperienceItem {
   };
   bullets: string[];
   tech: string[];
-  isFlaggedTodo?: boolean;
+
 }
 
 export interface CertificationItem {
@@ -100,7 +100,7 @@ export interface ProfileData {
     institution: string;
     degree: string;
     specialization: string;
-    cgpa: string; // Strictly 7.51/10 per resume
+    cgpa: string; // Strictly 7.79/10 per latest transcript
     batch: string;
     standing: string;
     phone: string;
@@ -208,75 +208,10 @@ export const PROFILE_DATA: ProfileData = {
     { label: "Production Internship", value: "01", sublabel: "Webyou Technologies (Verified Credential)" },
     { label: "Hackathon Standing", value: "Finalist", sublabel: "Summer of Code Fest 2.0 (GridGuard AI)" },
     { label: "Industry Credentials", value: "05", sublabel: "ServiceNow, NPTEL, Cisco, Coursera, VITyarthi" },
-    { label: "Academic CGPA", value: "7.51", sublabel: "B.Tech CSE (AI/ML) · VIT Bhopal" }
+    { label: "Academic CGPA", value: "7.79", sublabel: "B.Tech CSE (AI/ML) · VIT Bhopal" }
   ],
 
-  experiences: [
-    {
-      id: "webyou",
-      role: "Web Developer Intern",
-      company: "Webyou Technologies",
-      location: "Remote (Vadodara, Gujarat)",
-      period: "May 2026 – Jul 2026",
-      statusBadge: "Verified Internship",
-      testimonial: {
-        quote: "Mr. Ansh demonstrated professionalism, commitment, and a keen interest in understanding web development functions. He will add value to any organization he chooses to be a part of.",
-        author: "Mr. Jay Soni",
-        title: "Proprietor, Webyou Technologies"
-      },
-      bullets: [
-        "Built and maintained responsive, client-facing web applications using HTML, CSS, and JavaScript, translating design mockups into production-ready pages across multiple client projects.",
-        "Implemented reusable frontend components and DOM-driven interactivity, improving page consistency and reducing duplicate markup across projects.",
-        "Integrated basic backend functionality (form handling, API-driven content) alongside senior developers, and debugged cross-browser layout and responsiveness issues.",
-        "Collaborated in an agile team workflow — version control via Git, code reviews, and iterative delivery on client-facing deadlines."
-      ],
-      tech: ["HTML", "CSS", "JavaScript", "DOM Interactivity", "Responsive UI", "Git"]
-    },
-    {
-      id: "flyrank",
-      role: "Machine Learning Engineering Intern",
-      company: "FlyRank AI",
-      location: "Remote",
-      period: "TODO: Confirm dates (Legacy listed Jul–Sep 2026 Incoming)",
-      statusBadge: "TODO: Verification Pending",
-      certificateUrl: "/certificates/fly rank ai.pdf",
-      isFlaggedTodo: true,
-      bullets: [
-        "TODO: Reconfirm role timeline and add verified impact bullets once official dates are active.",
-        "Explored applied machine learning workflows and data pipelines."
-      ],
-      tech: ["Python", "Applied ML", "Data Pipelines", "Model Evaluation"]
-    },
-    {
-      id: "navodita",
-      role: "Artificial Intelligence Intern",
-      company: "Navodita Infotech",
-      location: "Remote",
-      period: "May 2025 – Jun 2025",
-      statusBadge: "Completed",
-      certificateUrl: "/certificates/offer letter navodita.pdf",
-      bullets: [
-        "Executed Python-driven applied AI tasks focusing on structured dataset normalization and model exploration.",
-        "Researched and integrated open-source machine learning packages for predictive feature extraction.",
-        "Documented technical methodology, benchmark evaluations, and final workflow deliverables."
-      ],
-      tech: ["Python", "Applied AI", "Data Processing", "Feature Extraction"]
-    },
-    {
-      id: "kraaft",
-      role: "Writer & Content Creator",
-      company: "Kraaft Entertainment",
-      location: "Remote",
-      period: "Jan 2025 – Present",
-      statusBadge: "TODO: Confirm Retention",
-      isFlaggedTodo: true,
-      bullets: [
-        "TODO: Confirm whether to retain non-engineering role in the primary placement portfolio.",
-        "Authored technical analyses and structured explanations of emerging AI systems for digital audiences."
-      ],
-      tech: ["Technical Writing", "Content Strategy", "Research"]
-    }
-  ],
+  experiences: [],
 
   featuredProjects: [
     {

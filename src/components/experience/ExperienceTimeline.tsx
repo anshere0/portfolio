@@ -100,13 +100,7 @@ export default function ExperienceTimeline() {
               >
                 {/* Node icon marker */}
                 <div className="absolute -left-[30px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-[var(--bg-paper)] hairline-border flex items-center justify-center">
-                  <span
-                    className={`w-2.5 h-2.5 rounded-full ${
-                      exp.isFlaggedTodo
-                        ? "bg-[var(--signal-amber)]"
-                        : "bg-[var(--signal-emerald)]"
-                    }`}
-                  />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[var(--signal-emerald)]" />
                 </div>
 
                 <div
@@ -132,18 +126,8 @@ export default function ExperienceTimeline() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <span
-                        className={`px-2.5 py-1 text-xs font-mono uppercase tracking-wider hairline-border inline-flex items-center gap-1.5 ${
-                          exp.isFlaggedTodo
-                            ? "bg-amber-50 text-[var(--signal-amber)] border-amber-300"
-                            : "bg-emerald-50 text-[var(--signal-emerald)] border-emerald-300"
-                        }`}
-                      >
-                        {exp.isFlaggedTodo ? (
-                          <AlertCircle className="w-3.5 h-3.5" />
-                        ) : (
-                          <CheckCircle2 className="w-3.5 h-3.5" />
-                        )}
+                      <span className="px-2.5 py-1 text-xs font-mono uppercase tracking-wider hairline-border inline-flex items-center gap-1.5 bg-emerald-50 text-[var(--signal-emerald)] border-emerald-300">
+                        <CheckCircle2 className="w-3.5 h-3.5" />
                         <span>{exp.statusBadge}</span>
                       </span>
 

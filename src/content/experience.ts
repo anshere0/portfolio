@@ -1,0 +1,85 @@
+import { TraceMilestone } from "./types";
+
+export const MILESTONES: TraceMilestone[] = [
+  {
+    id: "vit-bhopal",
+    title: "B.Tech Computer Science and Engineering (AI/ML)",
+    org: "Vellore Institute of Technology, Bhopal",
+    start: "July 2024",
+    end: "Expected May 2028",
+    kind: "education",
+    bullets: [
+      "Current Cumulative Grade Point Average: 7.79 / 10.00.",
+      "Core coursework: Data Structures & Algorithms in C++, Database Management Systems, Operating Systems, Machine Learning, Computer Networks, and Theory of Computation.",
+      "Actively practicing core algorithmic problem solving in C++ across arrays, hashing, two pointers, binary search, trees, and graphs.",
+    ],
+    accent: true,
+  },
+  {
+    id: "nse-scanner-release",
+    title: "NSE Momentum & Breadth Scanner (Live)",
+    org: "Independent Production System",
+    start: "October 2026",
+    end: "Present",
+    kind: "project",
+    bullets: [
+      "Engineered real-time binary WebSocket feed decoder for Angel One SmartAPI ticks.",
+      "Built Server-Sent Events architecture broadcasting advance/decline ratios and sector net breadth to React 19.",
+      "Implemented automated node:test suites verifying zero look-ahead bias across Indian market sessions.",
+    ],
+    links: [{ label: "Repository", url: "https://github.com/anshere0/portfolio" }],
+  },
+  {
+    id: "socf-finalist",
+    title: "Finalist — Summer of Code Fest 2.0",
+    org: "GSOC Innovators Club, VIT Bhopal",
+    start: "August 2026",
+    kind: "hackathon",
+    bullets: [
+      "Recognized as national-level hackathon finalist for GridGuard AI.",
+      "Engineered smart-meter streaming telemetry ingestion over WebSockets with XGBoost anomaly classification.",
+      "Integrated SHAP explainability showing real-time voltage and frequency feature contributions.",
+    ],
+    links: [{ label: "Certificate", url: "/certificates/summer of codefest.pdf" }],
+    accent: true,
+  },
+  {
+    id: "gssoc-contributor",
+    title: "Selected Open Source Contributor",
+    org: "GirlScript Summer of Code (GSSoC 2026)",
+    start: "May 2026",
+    end: "August 2026",
+    kind: "open-source",
+    bullets: [
+      "Contributed production bug fixes, performance optimizations, and documentation to open-source developer tooling.",
+      "Collaborated via GitHub pull request reviews, automated CI test suites, and git workflow standards.",
+    ],
+    links: [{ label: "Credential", url: "/certificates/gssooc contributor.png" }],
+  },
+  {
+    id: "ragforge-release",
+    title: "RAGForge Multi-Tenant Vector Retrieval Pipeline",
+    org: "Independent Project",
+    start: "September 2026",
+    end: "October 2026",
+    kind: "project",
+    bullets: [
+      "Constructed multi-tenant document chunking pipeline using ~500-word sliding windows with 50-word context overlap.",
+      "Integrated 768-dimensional Gemini embeddings with PostgreSQL pgvector HNSW cosine search (<60ms latency).",
+      "Delivered grounded synthesis providing verified passage citations in English, Hindi, and Tamil.",
+    ],
+    links: [{ label: "Repository", url: "https://github.com/anshere0/ragforge" }],
+  },
+  {
+    id: "aizen-hackathon",
+    title: "Participant — AI-ZEN Adversarial Nibbler Hackathon",
+    org: "Google Crowdsource & VIT Bhopal",
+    start: "March 2025",
+    kind: "hackathon",
+    bullets: [
+      "Analyzed generative AI safety boundaries, prompt injections, and adversarial robustness vectors.",
+      "Submitted red-teaming test suites for evaluation by Google Crowdsource researchers.",
+    ],
+    links: [{ label: "Certificate", url: "/certificates/ai zen hackathon.png" }],
+  },
+];

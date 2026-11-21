@@ -1,105 +1,61 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
-import SmoothScroll from "@/components/layout/SmoothScroll";
-import GridOverlay from "@/components/layout/GridOverlay";
+import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
+import { PRE_PAINT_THEME_SCRIPT } from "@/lib/theme";
+import { CANONICAL_SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-const instrumentSerif = Instrument_Serif({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-instrument-serif",
+  variable: "--font-bricolage",
   display: "swap",
+  fallback: ["system-ui", "sans-serif"],
 });
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const geistSans = Geist({
   subsets: ["latin"],
-  variable: "--font-sans-body",
+  variable: "--font-geist-sans",
   display: "swap",
+  fallback: ["system-ui", "sans-serif"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const geistMono = Geist_Mono({
   subsets: ["latin"],
-  variable: "--font-mono-code",
+  variable: "--font-geist-mono",
   display: "swap",
+  fallback: ["monospace"],
 });
 
 export const viewport: Viewport = {
-  themeColor: "#F4F1EA",
+  themeColor: "#0D2F6B",
   width: "device-width",
   initialScale: 1,
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ansharora.dev"),
-  title: "Ansh Arora — Systems & ML Engineer | Portfolio",
+  metadataBase: new URL(CANONICAL_SITE_URL),
+  title: "Ansh Arora — Systems, Telemetry & Retrieval Engineer",
   description:
-    "Personal portfolio and engineering lab notebook of Ansh Arora, third-year B.Tech CSE (AI/ML) at VIT Bhopal (2024–2028, CGPA: 7.51/10). Multi-tenant RAG pipelines, smart-meter IoT telemetry, and sandboxed CI tooling.",
-  authors: [{ name: "Ansh Arora", url: "https://ansharora.dev" }],
+    "An engineer's working drawing that executes. Real-time market telemetry (NSE WebSocket scanner), smart-meter anomaly detection (GridGuard AI), and multi-tenant RAG pipelines (RAGForge). B.Tech CSE (AI/ML), VIT Bhopal (CGPA 7.79/10).",
+  authors: [{ name: "Ansh Arora", url: CANONICAL_SITE_URL }],
   creator: "Ansh Arora",
-  keywords: [
-    "Ansh Arora",
-    "Systems Engineer",
-    "Machine Learning Engineer",
-    "VIT Bhopal",
-    "RAG",
-    "FastAPI",
-    "Next.js",
-    "TypeScript",
-    "PostgreSQL",
-    "pgvector",
-    "CI/CD Pipeline",
-    "GridGuard AI",
-  ],
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Ansh Arora — Systems & ML Engineer",
+    title: "Ansh Arora — Systems, Telemetry & Retrieval Engineer",
     description:
-      "Engineering lab notebook & portfolio of Ansh Arora. Real systems, verifiable metrics, and architectural blueprints.",
-    url: "https://ansharora.dev",
-    siteName: "Ansh Arora Engineering Notebook",
+      "The working drawing: an engineer's blueprint that actually runs. Real-time telemetry, verifiable receipts, and zero fluff.",
+    url: CANONICAL_SITE_URL,
+    siteName: "Ansh Arora Engineering Blueprint",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ansh Arora — Systems & ML Engineer",
+    title: "Ansh Arora — Systems, Telemetry & Retrieval Engineer",
     description:
-      "Engineering lab notebook of Ansh Arora (VIT Bhopal, CGPA 7.51/10). Multi-tenant RAG, IoT telemetry, CI debugging.",
+      "Real-time streaming telemetry, retrieval pipelines, and financial execution systems.",
   },
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Ansh Arora",
-  givenName: "Ansh",
-  familyName: "Arora",
-  url: "https://ansharora.dev",
-  email: "ansharora19102006@gmail.com",
-  telephone: "+919023573649",
-  jobTitle: "Systems & Machine Learning Engineer",
-  alumniOf: {
-    "@type": "EducationalOrganization",
-    name: "Vellore Institute of Technology, Bhopal",
-  },
-  sameAs: [
-    "https://github.com/anshere0",
-    "https://www.linkedin.com/in/ansh-arora0/",
-    "https://leetcode.com/u/anshere19/",
-  ],
-  knowsAbout: [
-    "Machine Learning",
-    "Retrieval-Augmented Generation (RAG)",
-    "Distributed Systems",
-    "TypeScript",
-    "Python",
-    "PostgreSQL",
-    "C++",
-    "Docker",
-    "CI/CD Systems",
-  ],
 };
 
 export default function RootLayout({
@@ -110,29 +66,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${instrumentSerif.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} scroll-smooth`}
+      data-theme="blueprint"
+      suppressHydrationWarning
+      className={`${bricolage.variable} ${geistSans.variable} ${geistMono.variable}`}
     >
       <head>
         <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: PRE_PAINT_THEME_SCRIPT,
+          }}
         />
       </head>
-      <body className="bg-[var(--bg-paper)] text-[var(--ink-primary)] font-sans antialiased selection:bg-[var(--signal-vermilion)] selection:text-white">
-        {/* Skip to main content accessibility landmark */}
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-[99999] px-4 py-2 bg-[var(--ink-primary)] text-white text-xs font-mono uppercase tracking-wider border border-[var(--hairline)]"
-        >
-          Skip to content
-        </a>
-
-        <GridOverlay />
-        <SmoothScroll>
-          <div className="relative z-10 flex min-h-screen flex-col">
-            {children}
-          </div>
-        </SmoothScroll>
+      <body className="font-body bg-[var(--bg)] text-[var(--text)] min-h-screen flex flex-col antialiased selection:bg-[var(--accent)] selection:text-[var(--accent-ink)]">
+        {children}
       </body>
     </html>
   );

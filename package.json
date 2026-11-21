@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "check-links": "node scripts/check-links.mjs"
+    "check-links": "node scripts/check-links.mjs",
+    "check-content": "node scripts/check-content.mjs",
+    "check-contrast": "node scripts/check-contrast.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
