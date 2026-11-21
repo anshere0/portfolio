@@ -3,6 +3,8 @@ import Hero from "@/components/sections/Hero";
 import WorkSection from "@/components/sections/WorkSection";
 import AskSection from "@/components/sections/AskSection";
 import PracticeSection from "@/components/sections/PracticeSection";
+import WritingSection from "@/components/sections/WritingSection";
+import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
@@ -24,28 +26,11 @@ export default function Home() {
         {/* Phase 5: Observable Practice (Load Curve, Spans Waterfall, Evidence Matrix) */}
         <PracticeSection />
 
-        {/* Phase 6 Target: Writing & Contact */}
-        <section id="writing" aria-label="Technical Writing" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto hairline-t">
-          <div className="max-w-2xl">
-            <h2 className="font-display text-2xl sm:text-3xl font-semibold text-[var(--text)] tracking-tight">
-              Technical notes
-            </h2>
-            <p className="mt-2 text-sm text-[var(--text-muted)] font-body">
-              System architecture notes on binary streaming protocols, vector chunking, and latency engineering.
-            </p>
-          </div>
-        </section>
+        {/* Phase 6: System Design Notes & Post-Mortems */}
+        <WritingSection />
 
-        <section id="contact" aria-label="Contact" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto hairline-t">
-          <div className="max-w-2xl">
-            <h2 className="font-display text-2xl sm:text-3xl font-semibold text-[var(--text)] tracking-tight">
-              Contact
-            </h2>
-            <p className="mt-2 text-sm text-[var(--text-muted)] font-body">
-              Available for software engineering and applied ML internships and roles.
-            </p>
-          </div>
-        </section>
+        {/* Phase 6: Direct Transmission Channels & Contact Form */}
+        <ContactSection />
       </main>
 
       {/* Blueprint Footer */}

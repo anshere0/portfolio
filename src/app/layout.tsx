@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 import { PRE_PAINT_THEME_SCRIPT } from "@/lib/theme";
 import { CANONICAL_SITE_URL } from "@/lib/site";
+import VitalsHud from "@/components/features/VitalsHud";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -76,9 +77,42 @@ export default function RootLayout({
             __html: PRE_PAINT_THEME_SCRIPT,
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Person",
+                  "@id": `${CANONICAL_SITE_URL}/#person`,
+                  name: "Ansh Arora",
+                  jobTitle: "Systems, Telemetry & Retrieval Engineer",
+                  alumniOf: {
+                    "@type": "CollegeOrUniversity",
+                    name: "Vellore Institute of Technology, Bhopal",
+                  },
+                  url: CANONICAL_SITE_URL,
+                  sameAs: [
+                    "https://github.com/anshere0",
+                    "https://linkedin.com/in/ansharora1910",
+                  ],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": `${CANONICAL_SITE_URL}/#website`,
+                  url: CANONICAL_SITE_URL,
+                  name: "Ansh Arora — Engineering Blueprint",
+                  publisher: { "@id": `${CANONICAL_SITE_URL}/#person` },
+                },
+              ],
+            }),
+          }}
+        />
       </head>
       <body className="font-body bg-[var(--bg)] text-[var(--text)] min-h-screen flex flex-col antialiased selection:bg-[var(--accent)] selection:text-[var(--accent-ink)]">
         {children}
+        <VitalsHud />
       </body>
     </html>
   );

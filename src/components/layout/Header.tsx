@@ -57,14 +57,12 @@ export default function Header() {
         {/* Action Controls: Theme Toggle & Resume */}
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <a
-            href="/Ansh_Arora_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/resume"
             className="px-3 py-1 text-xs font-medium rounded-[4px] hairline text-[var(--text-muted)] hover:text-[var(--text)] hover:border-[var(--line-strong)] transition-colors"
           >
             Résumé
-          </a>
+          </Link>
         </div>
       </div>
     </header>
