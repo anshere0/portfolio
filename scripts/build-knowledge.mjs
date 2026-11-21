@@ -123,7 +123,7 @@ const CHUNKS = [
     title: "Certifications & National Honors",
     section: "Credentials & Honors",
     url: "/#practice",
-    text: "Ansh holds two Elite certifications from NPTEL / IIT: Programming with Generative AI (Score: 92% Elite Gold) and Cloud Computing with Introduction to IoT (Score: 88% Elite). He also completed the ServiceNow Virtual Internship (CSA Prep & Agentic AI) and Cisco Python Essentials 1. He was a National Finalist at Summer of Code Fest 2.0 (GSOC Innovators Club) for GridGuard AI.",
+    text: "Ansh holds certifications from NPTEL / IIT: Cloud Computing (Score: 92%) and Introduction to IoT (Score: 88%). He also completed the ServiceNow Virtual Internship (CSA Prep & Agentic AI) and Cisco Python Essentials 1. He was a National Finalist at Summer of Code Fest 2.0 (GSOC Innovators Club) for GridGuard AI.",
   },
 
   // 7. Core Technical Skills & Languages

@@ -64,7 +64,7 @@ export const FIELD_NODES: FieldNode[] = [
   { id: "anomalies", label: "Anomaly detection", kind: "concept", cluster: "ml", x: 86, y: 66, mobile: true },
   { id: "react-flow", label: "React Flow topology", kind: "tool", cluster: "ml", x: 74, y: 58, mobile: true },
   { id: "smart-meter", label: "Smart-meter telemetry", kind: "concept", cluster: "ml", x: 92, y: 62, mobile: true },
-  { id: "nptel-genai-node", label: "NPTEL GenAI (92%)", kind: "tool", cluster: "ml", x: 84, y: 74, mobile: true },
+  { id: "nptel-cloud-node", label: "NPTEL Cloud (92%)", kind: "tool", cluster: "ml", x: 84, y: 74, mobile: true },
   { id: "z-score", label: "z-score anomaly thresholds", kind: "concept", cluster: "ml", x: 76, y: 76, mobile: false },
   { id: "substation", label: "Fault isolation", kind: "concept", cluster: "ml", x: 94, y: 70, mobile: false },
   { id: "fastapi", label: "FastAPI", kind: "tool", cluster: "ml", x: 72, y: 64, mobile: true },

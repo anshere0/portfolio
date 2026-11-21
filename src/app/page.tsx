@@ -2,6 +2,7 @@ import Header from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
 import WorkSection from "@/components/sections/WorkSection";
 import AskSection from "@/components/sections/AskSection";
+import PracticeSection from "@/components/sections/PracticeSection";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
@@ -20,17 +21,8 @@ export default function Home() {
         {/* Phase 4: Ask Ansh Retrieval Box (Streaming RAG Engine) */}
         <AskSection />
 
-        {/* Phase 5 Target: Load Curve, Spans, Evidence */}
-        <section id="practice" aria-label="Telemetry & Engineering Spans" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto hairline-t">
-          <div className="max-w-2xl">
-            <h2 className="font-display text-2xl sm:text-3xl font-semibold text-[var(--text)] tracking-tight">
-              Telemetry &amp; engineering spans
-            </h2>
-            <p className="mt-2 text-sm text-[var(--text-muted)] font-body">
-              Contribution frequency analyzed as a smart-meter load profile, alongside timeline trace spans.
-            </p>
-          </div>
-        </section>
+        {/* Phase 5: Observable Practice (Load Curve, Spans Waterfall, Evidence Matrix) */}
+        <PracticeSection />
 
         {/* Phase 6 Target: Writing & Contact */}
         <section id="writing" aria-label="Technical Writing" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto hairline-t">
