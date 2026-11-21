@@ -1,68 +1,79 @@
 import Header from "@/components/layout/Header";
-import IntroMonogram from "@/components/layout/IntroMonogram";
-import Hero from "@/components/hero/Hero";
-import VelocityMarquee from "@/components/layout/VelocityMarquee";
-import ProofStrip from "@/components/hero/ProofStrip";
-import FeaturedProjectsHorizontal from "@/components/projects/FeaturedProjectsHorizontal";
-import CompactProjectsGrid from "@/components/projects/CompactProjectsGrid";
-import AboutSection from "@/components/about/AboutSection";
-import ExperienceTimeline from "@/components/experience/ExperienceTimeline";
-import TechMatrixHeatmap from "@/components/graphs/TechMatrixHeatmap";
-import GithubActivity from "@/components/graphs/GithubActivity";
-import LeetCodePanel from "@/components/graphs/LeetCodePanel";
-import CredentialsLedger from "@/components/credentials/CredentialsLedger";
-import SystemsTerminal from "@/components/terminal/SystemsTerminal";
-import ContactSection from "@/components/contact/ContactSection";
+import Hero from "@/components/sections/Hero";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
     <>
-      {/* Skippable session intro monogram */}
-      <IntroMonogram />
-
-      {/* Sticky navigation with telemetry progress */}
+      {/* Sticky blueprint header */}
       <Header />
 
       <main id="main-content" className="flex-1">
-        {/* 01 / Hero Section with 3D WebGL Particle Field, Character Reveal & RAG Simulator */}
+        {/* Phase 2: Hero Section with 2D Canvas Topology Query Field */}
         <Hero />
 
-        {/* Dynamic Velocity-Driven Systems Marquee */}
-        <VelocityMarquee />
+        {/* Phase 3 Target: Work Block (Pipeline Rails & Runnable Demos) */}
+        <section id="work" aria-label="Featured Systems" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto hairline-t">
+          <div className="max-w-2xl">
+            <h2 className="font-display text-2xl sm:text-3xl font-semibold text-[var(--text)] tracking-tight">
+              Featured systems
+            </h2>
+            <p className="mt-2 text-sm text-[var(--text-muted)] font-body">
+              Four systems built end to end. Each has a runnable client-side demo and measured telemetry with verifiable sources.
+            </p>
+          </div>
+        </section>
 
-        {/* 02 / Proof Strip with Verified Metrics */}
-        <ProofStrip />
+        {/* Phase 4 Target: Ask Ansh Retrieval Box */}
+        <section id="ask" aria-label="Ask Ansh" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto hairline-t">
+          <div className="max-w-2xl">
+            <h2 className="font-display text-2xl sm:text-3xl font-semibold text-[var(--text)] tracking-tight">
+              Ask this portfolio anything
+            </h2>
+            <p className="mt-2 text-sm text-[var(--text-muted)] font-body">
+              Retrieval Q&amp;A system searching project telemetry, system design decisions, and measured performance.
+            </p>
+          </div>
+        </section>
 
-        {/* 03 / Pinned Horizontal Featured Case Studies (Desktop) / Vertical Stack (Mobile) */}
-        <FeaturedProjectsHorizontal />
+        {/* Phase 5 Target: Load Curve, Spans, Evidence */}
+        <section id="practice" aria-label="Telemetry & Engineering Spans" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto hairline-t">
+          <div className="max-w-2xl">
+            <h2 className="font-display text-2xl sm:text-3xl font-semibold text-[var(--text)] tracking-tight">
+              Telemetry &amp; engineering spans
+            </h2>
+            <p className="mt-2 text-sm text-[var(--text-muted)] font-body">
+              Contribution frequency analyzed as a smart-meter load profile, alongside timeline trace spans.
+            </p>
+          </div>
+        </section>
 
-        {/* 03.1 / Extended Systems Ledger for Secondary Projects */}
-        <CompactProjectsGrid />
+        {/* Phase 6 Target: Writing & Contact */}
+        <section id="writing" aria-label="Technical Writing" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto hairline-t">
+          <div className="max-w-2xl">
+            <h2 className="font-display text-2xl sm:text-3xl font-semibold text-[var(--text)] tracking-tight">
+              Technical notes
+            </h2>
+            <p className="mt-2 text-sm text-[var(--text-muted)] font-body">
+              System architecture notes on binary streaming protocols, vector chunking, and latency engineering.
+            </p>
+          </div>
+        </section>
 
-        {/* 04 / Biographical Dossier & Coursework Ledger */}
-        <AboutSection />
-
-        {/* 05 / Work Experience Timeline (Webyou, Navodita, FlyRank) */}
-        <ExperienceTimeline />
-
-        {/* 06 / Skills as Evidence (Tech x Project Proof Matrix Heatmap) */}
-        <TechMatrixHeatmap />
-
-        {/* 07 / GitHub Telemetry & 3D Isometric Commit Skyline */}
-        <GithubActivity />
-
-        {/* 08 / Algorithmic Problem Solving (LeetCode DSA in C++) */}
-        <LeetCodePanel />
-
-        {/* 09 / Verified Credentials & Hackathon Honors Ledger */}
-        <CredentialsLedger />
-
-        {/* 10 / Interactive REPL // AnshOS Shell & Engineering Arcade Playground */}
-        <SystemsTerminal />
+        <section id="contact" aria-label="Contact" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto hairline-t">
+          <div className="max-w-2xl">
+            <h2 className="font-display text-2xl sm:text-3xl font-semibold text-[var(--text)] tracking-tight">
+              Contact
+            </h2>
+            <p className="mt-2 text-sm text-[var(--text-muted)] font-body">
+              Available for software engineering and applied ML internships and roles.
+            </p>
+          </div>
+        </section>
       </main>
 
-      {/* 11 / Direct Communications, Form & Colophon Architecture Footer */}
-      <ContactSection />
+      {/* Blueprint Footer */}
+      <Footer />
     </>
   );
 }

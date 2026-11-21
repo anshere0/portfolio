@@ -3,12 +3,14 @@ import React from "react";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "text";
   size?: "sm" | "md" | "lg";
+  href?: string;
   children: React.ReactNode;
 }
 
 export default function Button({
   variant = "primary",
   size = "md",
+  href,
   className = "",
   children,
   ...props
@@ -30,11 +32,18 @@ export default function Button({
     text: "bg-transparent text-[var(--text-muted)] hover:text-[var(--text)] hover:underline underline-offset-4 px-2 py-1",
   };
 
+  const combinedClasses = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;
+
+  if (href) {
+    return (
+      <a href={href} className={combinedClasses} role="button">
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <button
-      className={`${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`}
-      {...props}
-    >
+    <button className={combinedClasses} {...props}>
       {children}
     </button>
   );
