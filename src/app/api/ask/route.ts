@@ -143,7 +143,9 @@ export async function POST(req: NextRequest) {
               question,
               validResults.map((r) => r.chunk)
             );
-            const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:streamGenerateContent?alt=sse&key=${apiKey}`;
+            const geminiModel =
+              process.env.GEMINI_MODEL || "gemini-3.5-flash-lite";
+            const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${geminiModel}:streamGenerateContent?alt=sse&key=${apiKey}`;
 
             const response = await fetch(geminiUrl, {
               method: "POST",
