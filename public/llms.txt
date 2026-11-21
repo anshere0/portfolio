@@ -1,0 +1,26 @@
+# Ansh Arora — Systems & Machine Learning Engineer
+> Third-year B.Tech CSE (AI/ML) student at VIT Bhopal (2024–2028, CGPA: 7.51/10).
+
+## Core Specializations
+- Multi-tenant Retrieval-Augmented Generation (RAG) pipelines with Gemini embeddings & pgvector.
+- Real-time IoT smart-meter telemetry streaming into XGBoost with SHAP explainability.
+- Autonomous sandboxed CI debugging agents using Docker and Gemini API.
+
+## Technical Skills
+- Languages: Python, C++, TypeScript, JavaScript, SQL
+- Frameworks: Next.js, React, FastAPI, Express.js, PyTorch
+- Databases: PostgreSQL, Supabase, pgvector, Prisma ORM
+- Tools & Infra: Docker, Git, GitHub Actions, Linux
+
+## Key Production Projects
+- RAGForge: https://ansharora.dev/projects/ragforge
+- CI/CD AI Pipeline: https://ansharora.dev/projects/ci-cd-ai-pipeline
+- GridGuard AI: https://ansharora.dev/projects/gridguard-ai
+- RCA Copilot: https://ansharora.dev/projects/rca-copilot
+
+## Contact & Links
+- Website: https://ansharora.dev
+- Email: ansharora19102006@gmail.com
+- GitHub: https://github.com/anshere0
+- LinkedIn: https://www.linkedin.com/in/ansh-arora0/
+- LeetCode: https://leetcode.com/u/anshere19/
