@@ -66,7 +66,7 @@ export const MILESTONES: TraceMilestone[] = [
     bullets: [
       "Constructed multi-tenant document chunking pipeline using ~500-word sliding windows with 50-word context overlap.",
       "Integrated 768-dimensional Gemini embeddings with PostgreSQL pgvector HNSW cosine search (<60ms latency).",
-      "Delivered grounded synthesis providing verified passage citations in English, Hindi, and Tamil.",
+      "Delivered grounded synthesis providing verified passage citations in English and Hindi.",
     ],
     links: [{ label: "Repository", url: "https://github.com/anshere0/ragforge" }],
   },

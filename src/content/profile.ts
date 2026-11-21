@@ -237,7 +237,7 @@ export const PROFILE_DATA: ProfileData = {
         },
         {
           title: "Multi-Language Auto-Detection & Tenant Isolation",
-          decision: "Engineered automatic language routing for English, Hindi, and Tamil queries alongside Postgres Row Level Security (RLS).",
+          decision: "Engineered automatic language routing for English and Hindi queries alongside Postgres Row Level Security (RLS).",
           tradeOff: "Guarantees zero data leakage across company accounts while increasing multi-language comprehension."
         }
       ],

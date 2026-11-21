@@ -74,7 +74,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     tagline: "Multi-tenant document Q&A with strict inline citations",
     status: "live",
     summary:
-      "Parses multi-format documents (PDF, DOCX, TXT), chunks them into ~500-word sliding windows with 50-word overlap, generates 768-dim embeddings, and performs pgvector HNSW cosine recall with grounded, multilingual cited answers in English, Hindi, and Tamil.",
+      "Parses multi-format documents (PDF, DOCX, TXT), chunks them into ~500-word sliding windows with 50-word overlap, generates 768-dim embeddings, and performs pgvector HNSW cosine recall with grounded, multilingual cited answers in English and Hindi.",
     stages: [
       { name: "INGEST", ms: 14, description: "Document normalization and UTF-8 extraction" },
       { name: "CHUNK", ms: 9, description: "500-word semantic windowing with overlap" },

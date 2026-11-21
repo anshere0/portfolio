@@ -1,6 +1,7 @@
 import Header from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
 import WorkSection from "@/components/sections/WorkSection";
+import AskSection from "@/components/sections/AskSection";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
@@ -16,17 +17,8 @@ export default function Home() {
         {/* Phase 3: Work Block (Sticky Pipeline Rails, Runnable Demos, Receipts) */}
         <WorkSection />
 
-        {/* Phase 4 Target: Ask Ansh Retrieval Box */}
-        <section id="ask" aria-label="Ask Ansh" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto hairline-t">
-          <div className="max-w-2xl">
-            <h2 className="font-display text-2xl sm:text-3xl font-semibold text-[var(--text)] tracking-tight">
-              Ask this portfolio anything
-            </h2>
-            <p className="mt-2 text-sm text-[var(--text-muted)] font-body">
-              Retrieval Q&amp;A system searching project telemetry, system design decisions, and measured performance.
-            </p>
-          </div>
-        </section>
+        {/* Phase 4: Ask Ansh Retrieval Box (Streaming RAG Engine) */}
+        <AskSection />
 
         {/* Phase 5 Target: Load Curve, Spans, Evidence */}
         <section id="practice" aria-label="Telemetry & Engineering Spans" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto hairline-t">
