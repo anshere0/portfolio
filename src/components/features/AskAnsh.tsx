@@ -275,8 +275,8 @@ export default function AskAnsh() {
 
         {showArchitecture && (
           <div className="mt-3 p-4 rounded-[6px] bg-[var(--bg-raised)] hairline font-mono text-xs text-[var(--text-muted)] space-y-2 leading-relaxed">
-            <div className="font-bold text-[var(--text)]">
-              PORTFOLIO RAG ARCHITECTURE // THE BLUEPRINT
+            <div className="font-bold text-[var(--text)] font-sans text-sm">
+              Portfolio retrieval architecture
             </div>
             <p>
               1. <strong>Precomputed Index:</strong> Content is normalized into ~200-word chunks in <code className="text-[var(--signal)]">knowledge.json</code> with precomputed vector projections and BM25 term frequencies.

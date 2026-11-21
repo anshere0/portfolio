@@ -110,8 +110,8 @@ export default function VitalsHud() {
       <div className="flex items-center justify-between border-b border-[var(--line)] pb-2">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-[var(--signal)] animate-pulse" />
-          <span className="font-bold text-[var(--text)] uppercase tracking-wider text-[11px]">
-            CORE VITALS TELEMETRY
+          <span className="font-bold text-[var(--text)] text-xs">
+            Core Web Vitals
           </span>
         </div>
         <button

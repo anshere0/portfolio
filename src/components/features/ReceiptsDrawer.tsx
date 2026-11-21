@@ -47,8 +47,8 @@ export default function ReceiptsDrawer({ metricId, onClose }: ReceiptsDrawerProp
 
         {/* Measurement Method */}
         <div className="space-y-2">
-          <h4 className="font-mono text-xs uppercase tracking-wider text-[var(--text-muted)]">
-            Measurement Method &amp; Setup
+          <h4 className="text-xs font-body font-medium text-[var(--text-muted)]">
+            Measurement method and setup
           </h4>
           <p className="text-[var(--text)] leading-relaxed bg-[var(--bg-raised)] p-3 rounded-[4px] hairline">
             {metric.method}
@@ -57,14 +57,14 @@ export default function ReceiptsDrawer({ metricId, onClose }: ReceiptsDrawerProp
 
         {/* Recorded Date */}
         <div className="flex items-center justify-between py-2 hairline-b">
-          <span className="text-[var(--text-muted)]">Benchmark Date</span>
+          <span className="text-[var(--text-muted)]">Benchmark date</span>
           <span className="font-mono text-[var(--text)]">{metric.date}</span>
         </div>
 
         {/* Source Evidence Verification Link */}
         <div className="space-y-2 pt-2">
-          <h4 className="font-mono text-xs uppercase tracking-wider text-[var(--text-muted)]">
-            Verifiable Source &amp; Artifact
+          <h4 className="text-xs font-body font-medium text-[var(--text-muted)]">
+            Verifiable source and artifact
           </h4>
 
           {metric.source === "self-reported" ? (

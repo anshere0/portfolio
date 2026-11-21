@@ -11,9 +11,6 @@ export default function AskSection() {
       className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto hairline-t"
     >
       <div className="max-w-3xl mb-10">
-        <span className="font-mono text-xs uppercase tracking-wider text-[var(--accent)] block mb-2">
-          RETRIEVAL ENGINE // WORKING PROOF
-        </span>
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text)] tracking-tight">
           Ask this portfolio anything.
         </h2>

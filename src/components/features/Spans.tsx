@@ -13,9 +13,6 @@ export default function Spans() {
     <div className="w-full bg-[var(--bg-raised)] rounded-[12px] hairline p-5 sm:p-6 space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-[var(--line)] pb-4">
         <div>
-          <span className="font-mono text-xs uppercase tracking-wider text-[var(--accent)] block mb-1">
-            FEATURE F5 // SYSTEM EXECUTION SPANS
-          </span>
           <h3 className="font-display text-xl sm:text-2xl font-bold text-[var(--text)] tracking-tight">
             Engineering spans waterfall
           </h3>

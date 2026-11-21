@@ -24,8 +24,8 @@ export default function CompactProjectsLedger() {
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-[10px] text-[var(--accent)] uppercase tracking-wider">
-                  {project.status === "live" ? "PRODUCTION" : "COMPLETED"}
+                <span className="text-xs text-[var(--text-muted)] font-body">
+                  {project.stack[0]}
                 </span>
                 <Tag variant={project.status === "live" ? "accent" : "outline"}>
                   {project.status}

@@ -99,9 +99,6 @@ export default function EvidenceMatrix() {
       {/* Header & View Switcher */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[var(--line)] pb-4">
         <div>
-          <span className="font-mono text-xs uppercase tracking-wider text-[var(--accent)] block mb-1">
-            FEATURE F7 // EMPIRICAL PROOF
-          </span>
           <h3 className="font-display text-xl sm:text-2xl font-bold text-[var(--text)] tracking-tight">
             Technology × project evidence matrix
           </h3>

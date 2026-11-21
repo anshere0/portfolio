@@ -17,9 +17,6 @@ export default function WorkSection() {
     >
       {/* Work Block Header */}
       <div className="max-w-3xl mb-12">
-        <span className="font-mono text-xs uppercase tracking-wider text-[var(--accent)] block mb-2">
-          FEATURED SYSTEMS // EVIDENCE OF DEPTH
-        </span>
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text)] tracking-tight">
           Working systems, not templates.
         </h2>

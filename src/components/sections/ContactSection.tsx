@@ -2,16 +2,25 @@
 
 import React, { useState } from "react";
 import Button from "@/components/ui/Button";
-import { SITE_CONFIG } from "@/content/site";
+
+interface ContactFormData {
+  name: string;
+  email: string;
+  message: string;
+  honeypot: string; // Anti-bot field, must remain empty
+}
 
 export default function ContactSection() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
     message: "",
     honeypot: "",
   });
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
+    "idle"
+  );
   const [errorMessage, setErrorMessage] = useState("");
   const [copiedEmail, setCopiedEmail] = useState(false);
 
@@ -20,7 +29,7 @@ export default function ContactSection() {
     setCopiedEmail(true);
     setTimeout(() => {
       setCopiedEmail(false);
-    }, 1500);
+    }, 1500); // 1.5s copy feedback per docs/04_MOTION_SPEC.md
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -36,8 +45,9 @@ export default function ContactSection() {
       });
 
       const data = await res.json();
+
       if (!res.ok) {
-        throw new Error(data.error || "Failed to submit message");
+        throw new Error(data.error || "Failed to send message. Please try again.");
       }
 
       setStatus("success");
@@ -45,7 +55,7 @@ export default function ContactSection() {
     } catch (err: unknown) {
       setStatus("error");
       setErrorMessage(
-        err instanceof Error ? err.message : "Failed to transmit message"
+        err instanceof Error ? err.message : "An unexpected error occurred."
       );
     }
   };
@@ -53,20 +63,17 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      aria-label="Direct Communication & Contact"
+      aria-label="Contact and communication"
       className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto hairline-t space-y-12"
     >
       {/* Header */}
       <div className="max-w-3xl">
-        <span className="font-mono text-xs uppercase tracking-wider text-[var(--accent)] block mb-2">
-          DIRECT CHANNELS // INITIATE TRANSMISSION
-        </span>
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text)] tracking-tight">
-          Initiate contact.
+          Contact.
         </h2>
         <p className="mt-3 text-base sm:text-lg text-[var(--text-muted)] font-body leading-relaxed">
           Open to software engineering and applied machine learning internships and roles.
-          Direct transmission channels are monitored daily.
+          I read every message sent here.
         </p>
       </div>
 
@@ -74,15 +81,15 @@ export default function ContactSection() {
         {/* Left: Direct Channel Directory */}
         <div className="lg:col-span-5 space-y-6">
           <div className="p-6 rounded-[8px] bg-[var(--bg-raised)] hairline space-y-5">
-            <span className="font-mono text-xs uppercase tracking-wider text-[var(--text-muted)] block border-b border-[var(--line)] pb-3">
-              PRIMARY CHANNELS
+            <span className="text-xs font-sans text-[var(--text-muted)] block border-b border-[var(--line)] pb-3">
+              Direct channels
             </span>
 
-            <div className="space-y-4 font-mono text-xs">
+            <div className="space-y-4 font-body text-xs">
               {/* Email with 1.5s Copy Micro-interaction */}
               <div className="space-y-1">
-                <span className="text-[10px] text-[var(--text-muted)] uppercase block">
-                  ELECTRONIC MAIL
+                <span className="text-[11px] text-[var(--text-muted)] block">
+                  Email
                 </span>
                 <div className="flex items-center justify-between gap-2">
                   <a
@@ -103,8 +110,8 @@ export default function ContactSection() {
 
               {/* Direct Phone */}
               <div className="space-y-1 pt-2 border-t border-[var(--line)]">
-                <span className="text-[10px] text-[var(--text-muted)] uppercase block">
-                  TELEPHONE / DIRECT
+                <span className="text-[11px] text-[var(--text-muted)] block">
+                  Phone
                 </span>
                 <a
                   href="tel:+919023573649"
@@ -116,8 +123,8 @@ export default function ContactSection() {
 
               {/* Social Profiles */}
               <div className="space-y-1 pt-2 border-t border-[var(--line)]">
-                <span className="text-[10px] text-[var(--text-muted)] uppercase block">
-                  NETWORK DIRECTORIES
+                <span className="text-[11px] text-[var(--text-muted)] block">
+                  Profiles
                 </span>
                 <div className="flex items-center gap-4 text-xs font-body pt-1">
                   <a
@@ -140,16 +147,16 @@ export default function ContactSection() {
                     href="/resume"
                     className="text-[var(--accent)] hover:underline underline-offset-4 font-semibold"
                   >
-                    Printable Résumé →
+                    Printable résumé
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="p-4 rounded-[6px] bg-[var(--bg-sunken)] hairline font-mono text-[11px] text-[var(--text-muted)] space-y-1">
-            <div>LOCATION: Bhopal, Madhya Pradesh / VIT Bhopal University</div>
-            <div>STATUS: Active student &amp; candidate (Class of 2028)</div>
+          <div className="p-4 rounded-[6px] bg-[var(--bg-sunken)] hairline text-xs text-[var(--text-muted)] space-y-1">
+            <div>Bhopal, Madhya Pradesh · VIT Bhopal University</div>
+            <div>Active undergraduate student (Class of 2028)</div>
           </div>
         </div>
 
@@ -178,9 +185,9 @@ export default function ContactSection() {
               <div className="space-y-1.5 font-body">
                 <label
                   htmlFor="contact-name"
-                  className="font-mono text-xs uppercase tracking-wider text-[var(--text-muted)] block"
+                  className="text-xs text-[var(--text-muted)] block"
                 >
-                  Your Name
+                  Your name
                 </label>
                 <input
                   id="contact-name"
@@ -198,9 +205,9 @@ export default function ContactSection() {
               <div className="space-y-1.5 font-body">
                 <label
                   htmlFor="contact-email"
-                  className="font-mono text-xs uppercase tracking-wider text-[var(--text-muted)] block"
+                  className="text-xs text-[var(--text-muted)] block"
                 >
-                  Your Email
+                  Your email
                 </label>
                 <input
                   id="contact-email"
@@ -219,9 +226,9 @@ export default function ContactSection() {
             <div className="space-y-1.5 font-body">
               <label
                 htmlFor="contact-message"
-                className="font-mono text-xs uppercase tracking-wider text-[var(--text-muted)] block"
+                className="text-xs text-[var(--text-muted)] block"
               >
-                Message / Inquiry
+                Message
               </label>
               <textarea
                 id="contact-message"
@@ -250,13 +257,13 @@ export default function ContactSection() {
                 role="status"
                 className="p-3 rounded-[4px] bg-[var(--signal)]/15 border border-[var(--signal)] text-xs text-[var(--signal)] font-mono"
               >
-                Transmission received. Thank you for reaching out.
+                Message sent. Thank you for reaching out.
               </div>
             )}
 
             <div className="flex items-center justify-between pt-2">
-              <span className="font-mono text-[10px] text-[var(--text-muted)]">
-                Direct transmission • SSL Encrypted
+              <span className="text-[11px] text-[var(--text-muted)]">
+                Delivered directly to inbox
               </span>
               <Button
                 type="submit"
@@ -264,7 +271,7 @@ export default function ContactSection() {
                 size="md"
                 disabled={status === "loading"}
               >
-                {status === "loading" ? "Transmitting..." : "Send message"}
+                {status === "loading" ? "Sending..." : "Send message"}
               </Button>
             </div>
           </form>

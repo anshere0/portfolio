@@ -33,9 +33,6 @@ export default function ProjectCard({ project, onReceiptClick }: ProjectCardProp
         {/* --- LEFT COLUMN: Sticky Pipeline Rail (lg:col-span-4) --- */}
         <div className="lg:col-span-4 lg:sticky lg:top-24 space-y-6">
           <div className="space-y-2">
-            <span className="font-mono text-[11px] text-[var(--accent)] tracking-wider uppercase block">
-              EXECUTION PIPELINE
-            </span>
             <h3
               id={`heading-${project.slug}`}
               className="font-display text-2xl sm:text-3xl font-bold text-[var(--text)] tracking-tight leading-tight"
@@ -102,8 +99,8 @@ export default function ProjectCard({ project, onReceiptClick }: ProjectCardProp
             {/* Measured Metric */}
             {primaryMetric && (
               <div className="space-y-1">
-                <span className="font-mono text-[10px] text-[var(--text-muted)] uppercase tracking-wider block">
-                  WHAT I MEASURED
+                <span className="text-xs text-[var(--text-muted)] block">
+                  Measured telemetry
                 </span>
                 <Metric
                   value={primaryMetric.value}
@@ -115,8 +112,8 @@ export default function ProjectCard({ project, onReceiptClick }: ProjectCardProp
 
             {/* Source Repo & Status */}
             <div className="space-y-1 flex flex-col justify-between">
-              <span className="font-mono text-[10px] text-[var(--text-muted)] uppercase tracking-wider block">
-                SOURCE VERIFICATION
+              <span className="text-xs text-[var(--text-muted)] block">
+                Sources
               </span>
               <div className="flex items-center gap-4 text-xs font-body">
                 {project.links.source && (
@@ -146,7 +143,7 @@ export default function ProjectCard({ project, onReceiptClick }: ProjectCardProp
           {/* Engineering Post-Mortem */}
           <div className="space-y-3 p-5 rounded-[8px] bg-[var(--bg-sunken)] hairline">
             <div>
-              <span className="font-mono text-xs font-semibold text-[var(--text)] uppercase tracking-wider block mb-1">
+              <span className="font-semibold text-xs text-[var(--text)] block mb-1">
                 What broke &amp; how I solved it:
               </span>
               <p className="text-xs sm:text-sm text-[var(--text-muted)] font-body leading-relaxed">
@@ -155,7 +152,7 @@ export default function ProjectCard({ project, onReceiptClick }: ProjectCardProp
             </div>
 
             <div className="pt-2 border-t border-[var(--line)]">
-              <span className="font-mono text-xs font-semibold text-[var(--text)] uppercase tracking-wider block mb-1">
+              <span className="font-semibold text-xs text-[var(--text)] block mb-1">
                 What&apos;s next:
               </span>
               <p className="text-xs sm:text-sm text-[var(--text-muted)] font-body leading-relaxed">

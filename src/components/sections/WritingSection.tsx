@@ -13,9 +13,6 @@ export default function WritingSection() {
     >
       {/* Section Header */}
       <div className="max-w-3xl">
-        <span className="font-mono text-xs uppercase tracking-wider text-[var(--accent)] block mb-2">
-          SYSTEM DESIGN &amp; POST-MORTEMS
-        </span>
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text)] tracking-tight">
           Technical notes.
         </h2>
@@ -53,8 +50,8 @@ export default function WritingSection() {
 
               {/* Core System Takeaways */}
               <div className="space-y-2 pt-2 border-t border-[var(--line)]">
-                <span className="font-mono text-[10px] text-[var(--accent)] uppercase tracking-wider block">
-                  SYSTEM TAKEAWAYS
+                <span className="text-xs text-[var(--text-muted)] font-body block font-medium">
+                  Core takeaways
                 </span>
                 <ul className="space-y-1.5 font-body text-xs text-[var(--text-muted)]">
                   {note.takeaways.map((takeaway, idx) => (

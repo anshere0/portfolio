@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(CANONICAL_SITE_URL),
   title: "Ansh Arora — Systems, Telemetry & Retrieval Engineer",
   description:
-    "An engineer's working drawing that executes. Real-time market telemetry (NSE WebSocket scanner), smart-meter anomaly detection (GridGuard AI), and multi-tenant RAG pipelines (RAGForge). B.Tech CSE (AI/ML), VIT Bhopal (CGPA 7.79/10).",
+    "An engineer's working drawing that executes. Real-time market telemetry (NSE WebSocket scanner), smart-meter anomaly detection (GridGuard AI), and multi-tenant RAG pipelines (RAGForge). B.Tech CSE (AI/ML), VIT Bhopal.",
   authors: [{ name: "Ansh Arora", url: CANONICAL_SITE_URL }],
   creator: "Ansh Arora",
   alternates: {
@@ -111,6 +111,12 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body bg-[var(--bg)] text-[var(--text)] min-h-screen flex flex-col antialiased selection:bg-[var(--accent)] selection:text-[var(--accent-ink)]">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] px-4 py-2 rounded-[4px] bg-[var(--accent)] text-[var(--accent-ink)] font-mono text-xs font-bold shadow-lg"
+        >
+          Skip to main content
+        </a>
         {children}
         <VitalsHud />
       </body>

@@ -40,7 +40,7 @@ export default function Hero() {
 
         {/* Subheadline (academics & focus) */}
         <p className="mt-3 sm:mt-4 text-sm sm:text-base text-[var(--text-muted)] font-body pointer-events-auto max-w-xl">
-          Third-year CSE (AI/ML) student at VIT Bhopal (CGPA 7.79/10), actively
+          Third-year CSE (AI/ML) student at VIT Bhopal, actively
           engineering distributed systems and practicing core data structures &amp; algorithms.
         </p>
 

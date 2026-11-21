@@ -70,9 +70,6 @@ export default function LoadCurve() {
       {/* Header & 3 Honest Metrics */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[var(--line)] pb-5">
         <div>
-          <span className="font-mono text-xs uppercase tracking-wider text-[var(--accent)] block mb-1">
-            MOMENT 3 // TELEMETRY OSCILLOSCOPE TRACE
-          </span>
           <h3 className="font-display text-xl sm:text-2xl font-bold text-[var(--text)] tracking-tight">
             Commit load curve
           </h3>

@@ -28,8 +28,8 @@ export default function StyleguidePage() {
         <div className="space-y-4 hairline-b pb-8">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <span className="font-data text-xs text-[var(--accent)] tracking-wider">
-                DESIGN SYSTEM SPECIFICATION // DOCS 03
+              <span className="text-xs text-[var(--accent)] font-sans block">
+                Design system tokens
               </span>
               <h1 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mt-1 text-[var(--text)]">
                 Component & Token Styleguide
