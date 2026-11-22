@@ -5,26 +5,40 @@
 [data-theme="obsidian"],
 [data-theme="blueprint"],
 [data-theme="night"] {
-  --bg: #0A0B10;               /* Deep obsidian dark */
-  --bg-raised: #121420;        /* Sleek card surface */
-  --bg-sunken: #07080C;        /* Sunken wells & code boxes */
-  --line: rgba(255, 255, 255, 0.08);   /* Subtle glowing hairlines */
+  --bg: #0A0B10;
+  /* Deep obsidian dark */
+  --bg-raised: #121420;
+  /* Sleek card surface */
+  --bg-sunken: #07080C;
+  /* Sunken wells & code boxes */
+  --line: rgba(255, 255, 255, 0.08);
+  /* Subtle glowing hairlines */
   --line-strong: rgba(255, 255, 255, 0.2);
   --grid: rgba(255, 255, 255, 0.04);
-  --text: #F3F4F8;             /* Crisp bright typography */
-  --text-muted: #8E95AA;       /* High-contrast readable secondary text */
-  --accent: #FF5C4D;           /* Vibrant Coral / Electric Orange */
-  --accent-ink: #0A0B10;       /* Contrast text on accent */
-  --signal: #00F0FF;           /* Electric Cyan / Glowing data */
-  --anomaly: #FF3366;          /* Hot Pink / Anomaly alerts */
-  --purple: #8B5CF6;           /* Electric Violet */
-  --mint: #00F5A0;             /* Emerald Mint */
-  --amber: #FFD600;            /* Bright Lemon Gold */
+  --text: #F3F4F8;
+  /* Crisp bright typography */
+  --text-muted: #8E95AA;
+  /* High-contrast readable secondary text */
+  --accent: #FF5C4D;
+  /* Vibrant Coral / Electric Orange */
+  --accent-ink: #0A0B10;
+  /* Contrast text on accent */
+  --signal: #00F0FF;
+  /* Electric Cyan / Glowing data */
+  --anomaly: #FF3366;
+  /* Hot Pink / Anomaly alerts */
+  --purple: #8B5CF6;
+  /* Electric Violet */
+  --mint: #00F5A0;
+  /* Emerald Mint */
+  --amber: #FFD600;
+  /* Bright Lemon Gold */
 }
 
 /* Midnight Slate Alternate */
 [data-theme="midnight"] {
-  --bg: #0E111A;               /* Midnight Slate Dark */
+  --bg: #0E111A;
+  /* Midnight Slate Dark */
   --bg-raised: #161B28;
   --bg-sunken: #080A10;
   --line: rgba(255, 255, 255, 0.1);
@@ -32,7 +46,8 @@
   --grid: rgba(255, 255, 255, 0.05);
   --text: #F8FAFC;
   --text-muted: #94A3B8;
-  --accent: #00F0FF;           /* Neon Cyan */
+  --accent: #00F0FF;
+  /* Neon Cyan */
   --accent-ink: #0A0B10;
   --signal: #38BDF8;
   --anomaly: #F43F5E;
@@ -94,22 +109,26 @@ a:active {
 .hairline {
   border: 1px solid var(--line);
 }
+
 .hairline-t {
   border-top: 1px solid var(--line);
 }
+
 .hairline-b {
   border-bottom: 1px solid var(--line);
 }
+
 .hairline-l {
   border-left: 1px solid var(--line);
 }
+
 .hairline-r {
   border-right: 1px solid var(--line);
 }
 
 /* Architectural Grid Background */
 .blueprint-grid {
-  background-image: 
+  background-image:
     linear-gradient(to right, var(--grid) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
   background-size: 32px 32px;
@@ -140,7 +159,12 @@ a:active {
     background: #FFFFFF !important;
     color: #111111 !important;
   }
-  header, footer, nav, button, .no-print {
+
+  header,
+  footer,
+  nav,
+  button,
+  .no-print {
     display: none !important;
   }
 }
@@ -151,21 +175,27 @@ a:active {
   animation: none;
   mix-blend-mode: normal;
 }
+
 ::view-transition-old(root) {
   z-index: 1;
 }
+
 ::view-transition-new(root) {
   z-index: 9999;
 }
 
 /* Accessibility: Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
+
   ::view-transition-group(*),
   ::view-transition-old(*),
   ::view-transition-new(*) {
     animation: none !important;
   }
-  *, ::before, ::after {
+
+  *,
+  ::before,
+  ::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
