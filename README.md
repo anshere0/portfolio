@@ -1,79 +1,99 @@
-# Ansh Arora — Systems & Machine Learning Engineer Portfolio
+# 🌐 Ansh Arora — Developer Portfolio
 
-> **Art Direction:** "Systems Notebook" — Warm paper (`#F4F1EA`), Carbon ink (`#121212`), Hairlines (`#D8D2C4`), and Vermilion accent (`#C8260E`). Strict adherence to verified production evidence, with zero generic AI tropes.
+**Production-Grade Personal Portfolio, 3D Interactive Commit Skyline, Telemetry Visualizers, and Embedded AI Copilot**
 
-[![Next.js 16](https://img.shields.io/badge/Next.js-16.4.0-black?logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38bdf8?logo=tailwind-css)](https://tailwindcss.com/)
-[![GSAP](https://img.shields.io/badge/GSAP-3.15-green?logo=greensock)](https://greensock.com/)
-[![Lenis](https://img.shields.io/badge/Lenis-Smooth_Scroll-orange)](https://lenis.darkroom.engineering/)
-
----
-
-## Architecture Overview
-
-- **Framework:** Next.js 16 App Router with Partial Prerendering and Turbopack.
-- **Single Source of Truth:** `src/content/profile.ts` (all copy, telemetry metrics, project specifications, and certificates are managed here; zero hardcoded copy in UI components).
-- **Smooth Motion Engine:** GSAP 3 synced with Lenis ticker in `src/components/layout/SmoothScroll.tsx`.
-- **Navigation:** Sticky telemetry header with live status, reading progress indicator, and anchor-aware smooth scrolling.
-- **Case Study Subsystem:** Dynamic architecture blueprints at `/projects/[slug]` with interactive pipeline inspector, trade-off matrices, and verified metrics.
+[![Live Site](https://img.shields.io/badge/Live_Portfolio-portfolio--orcin--rho--92.vercel.app-black?style=for-the-badge&logo=vercel)](https://portfolio-orcin-rho-92.vercel.app/)
+[![Next.js 16](https://img.shields.io/badge/Framework-Next.js_16.4-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![React 19](https://img.shields.io/badge/Library-React_19.3-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
+[![Three.js](https://img.shields.io/badge/3D_Graphics-Three.js-black?style=for-the-badge&logo=three.js)](https://threejs.org/)
+[![GSAP](https://img.shields.io/badge/Animation-GSAP%20%2F%20Lenis-88CE02?style=for-the-badge&logo=greensock)](https://greensock.com/gsap/)
+[![Tailwind CSS 4](https://img.shields.io/badge/Styling-Tailwind_CSS_4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 
 ---
 
-## Sections Implemented
+## 📌 Executive Summary
 
-1. **Top Telemetry & Navigation:** Status indicator, student cohort (`2024–2028`), verified CGPA (`7.51/10`), VIT Bhopal badge, resume download, quick navigation, and instant links to 3D Skyline and AnshOS Shell.
-2. **01 / Hero Section & 3D WebGL Vector Field:** Systems Notebook intro with split-text reveal, verified engineering lab telemetry card, and **3D Interactive Three.js Vector Particle Field** (18,000 particles with cursor repulsion, scroll-depth fly-through, and topology switching between Neural Manifold, Monogram AA, and Vector Torus) plus an interactive **RAGForge Data Pipeline Simulator** with real-time packet transmission and latency telemetry.
-3. **01.1 / Velocity-Driven Systems Marquee:** Scroll velocity-sensitive kinetic ticker that smoothly accelerates and decelerates with user scroll momentum.
-4. **02 / Proof Strip:** High-impact metric counters (07+ Systems Built, 01 Production Internship, Finalist standing, 05 Credentials, 7.51 CGPA).
-5. **03 / Featured Systems & Case Studies:** GSAP pinned horizontal scroll container (desktop) / vertical stack (mobile) highlighting *RAGForge*, *CI/CD AI Pipeline*, *GridGuard AI*, and *RCA Copilot*.
-6. **03.1 / Extended Systems Ledger:** Secondary project cards for *LikhAI*, *StackSensei*, and *AirPredict NYC*.
-7. **04 / Biographical Dossier:** Authentic portrait photo, academic standing at VIT Bhopal, engineering philosophy, and 8 verified core CS courses.
-8. **05 / Production Experience Timeline:** Chronological audit trail with vertical scroll line drawing, Webyou Technologies internship with Jay Soni testimonial quote, Navodita Infotech, and flagged verification badges for FlyRank AI and Kraaft Entertainment.
-9. **06 / Skills as Evidence (Matrix Heatmap):** Technology x Project proof matrix mapping 18 technologies across 8 production projects.
-10. **07 / Codebase Telemetry & 3D Isometric Commit Skyline:** High-performance isometric CAD city turning 52 weeks of GitHub activity into interactive 3D skyscrapers with inspection beacons, date HUDs, and 2D calendar toggle, plus language distribution breakdown bar.
-11. **08 / Algorithmic Problem Solving (DSA):** 120+ solved problems breakdown in C++, algorithmic patterns, and space/time complexity benchmarks.
-12. **09 / Verified Credentials & Hackathons:** 8 verified audit records with direct links to certificates in `/public/certificates/`.
-13. **10 / Interactive REPL // AnshOS Shell & Arcade Playground:** In-browser terminal emulator with synthesized mechanical keyboard audio (`AudioContext`), `neofetch`, live simulated RAG vector execution, systems code rain, and playable retro Snake arcade game.
-14. **11 / Communications & Inquiry Ledger:** Zod-validated transmission form with honeypot spam protection, one-click email copy button with tactile feedback, and colophon architecture credits.
+This repository hosts the source code for [Ansh Arora's portfolio](https://portfolio-orcin-rho-92.vercel.app/).
+
+Designed under the **"Systems Notebook"** art direction—blending warm paper textures (`#F4F1EA`), high-contrast carbon typography (`#121212`), hairlines (`#D8D2C4`), and vermilion accents (`#C8260E`)—the application presents software systems, machine learning engineering, and quantitative financial research through interactive proof rather than static claims.
 
 ---
 
-## Scripts & CLI Commands
+## 🌟 Signature Features
 
-```bash
-# Start development server
-npm run dev
+1. **3D Commit Skyline (`CommitSkyline3D.tsx`)**:
+   - Interactive Three.js canvas rendering a spatial 3D bar graph of annual GitHub contributions with dynamic camera orbits and lighting.
+2. **Interactive AI Copilot (`AskAnsh.tsx`)**:
+   - Natural language search interface allowing visitors, recruiters, and hiring managers to ask questions about my background, project architecture, and technical decisions, answered using local knowledge embeddings (`knowledge.json`).
+3. **Live Interactive Project Demonstrations**:
+   - **`DeltaOptionsDemo.tsx`**: Interactive BTC option payoff curve and 25-gate matrix evaluator.
+   - **`GridGuardDemo.tsx`**: Electrical feeder loss simulator with dynamic load charts.
+   - **`NseScannerDemo.tsx`**: Live market breadth playback replicating real-time SSE streams.
+   - **`RagForgeDemo.tsx`**: Multi-tenant document ingestion and similarity retrieval simulator.
+4. **Interactive Terminal (`InteractiveTerminal.tsx`)**:
+   - Keyboard-navigable developer CLI supporting commands: `help`, `skills`, `projects`, `contact`, `clear`.
+5. **Ultra-Smooth Interaction Layer**:
+   - Inertial smooth scrolling powered by **Lenis** (`lenis: ^1.3.26`).
+   - Micro-interaction animations driven by **GSAP** (`gsap: ^3.15.0`) and `@gsap/react`.
 
-# Run link integrity audit (verifies all certificates, public assets, and route slugs)
-npm run check-links
+---
 
-# Compile optimized static production build
-npm run build
+## 💻 Tech Stack & Architecture
 
-# Start production server
-npm run start
+- **Core Framework**: Next.js 16 (App Router), React 19 (Server & Client Components)
+- **3D & Motion**: Three.js (`three: ^0.187.0`), GSAP (`gsap: ^3.15.0`), Lenis Smooth Scroll
+- **Type Safety & Validation**: TypeScript 5, Zod (`zod: ^4.6.6`)
+- **Styling**: Tailwind CSS 4 with custom editorial font pairings and hairline borders
+- **Content & Search**: Static JSON knowledge graph with in-memory semantic retrieval
+
+---
+
+## 📂 Repository Layout
+
+```text
+portfolio/
+├── public/                     # Resume PDF, certifications, profile imagery
+├── scripts/                    # Build scripts (check-links, check-contrast, build-knowledge)
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx          # Root shell, font declarations, Lenis provider
+│   │   ├── page.tsx            # Main landing page
+│   │   ├── resume/page.tsx     # Dedicated resume viewer
+│   │   └── styleguide/page.tsx # Design system & token showcase
+│   ├── components/
+│   │   ├── demos/              # Interactive simulators (Delta, GridGuard, NSE, RagForge)
+│   │   ├── features/           # CommitSkyline3D, AskAnsh, InteractiveTerminal
+│   │   ├── layout/             # Header, Footer, ThemeToggle
+│   │   ├── sections/           # Hero, Work, Practice, Writing, Contact
+│   │   └── ui/                 # Buttons, Drawers, Panels, SpotlightCards
+│   ├── content/                # Structured experience, projects, metrics, and knowledge
+│   └── lib/                    # Retrieval helpers, theme utilities, prompts
+├── package.json
+└── tsconfig.json
 ```
 
 ---
 
-## Deployment on Vercel
+## 🚀 Local Development
 
-1. Push this repository to GitHub.
-2. Import the project in [Vercel](https://vercel.com).
-3. The build command will automatically run `npm run build`.
-4. No required environment variables are needed for static operation. Optional:
-   - `NEXT_PUBLIC_SITE_URL` (Defaults to `https://ansharora.dev`)
+```bash
+# Clone the repository
+git clone https://github.com/anshere0/portfolio.git
+cd portfolio
 
----
+# Install dependencies
+npm install
 
-## Audit & Verification Standards
+# Run the development server
+npm run dev
+```
 
-- **Lighthouse Scores:**
-  - Best Practices: `100/100`
-  - Accessibility: `97/100` (WCAG AA compliant color contrast & ARIA landmarks)
-- **Link Integrity:** 26/26 verified routes and assets with zero 404 errors.
-- **Academic & Resume Integrity:** CGPA is verified strictly as `7.51 / 10`.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
-© 2026 Ansh Arora. All verified production metrics protected.
+
+## 👤 Author
+**Ansh Arora**  
+- Portfolio: [https://portfolio-orcin-rho-92.vercel.app/](https://portfolio-orcin-rho-92.vercel.app/)  
+- GitHub: [@anshere0](https://github.com/anshere0)  
+- LinkedIn: [Ansh Arora](https://www.linkedin.com/in/ansh-arora0/)
