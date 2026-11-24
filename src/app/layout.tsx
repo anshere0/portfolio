@@ -28,7 +28,7 @@ const geistMono = Geist_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0D2F6B",
+  themeColor: "#0A0B10",
   width: "device-width",
   initialScale: 1,
 };
@@ -68,7 +68,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-theme="blueprint"
+      data-theme="obsidian"
       suppressHydrationWarning
       className={`${bricolage.variable} ${geistSans.variable} ${geistMono.variable}`}
     >

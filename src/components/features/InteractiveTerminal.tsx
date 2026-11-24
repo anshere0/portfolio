@@ -23,8 +23,9 @@ export default function InteractiveTerminal() {
 
   const [historyIndex, setHistoryIndex] = useState(-1);
   const commandHistoryRef = useRef<string[]>([]);
-  const terminalEndRef = useRef<HTMLDivElement>(null);
+  const terminalContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const isInitialMount = useRef(true);
 
   // Snake Game State
   const [snake, setSnake] = useState<{ x: number; y: number }[]>([
@@ -38,9 +39,15 @@ export default function InteractiveTerminal() {
   const [gameOver, setGameOver] = useState(false);
   const [gameRunning, setGameRunning] = useState(false);
 
-  // Auto-scroll terminal
+  // Auto-scroll terminal container (only on subsequent user commands, never on initial mount)
   useEffect(() => {
-    terminalEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+    if (terminalContainerRef.current) {
+      terminalContainerRef.current.scrollTop = terminalContainerRef.current.scrollHeight;
+    }
   }, [history]);
 
   // Handle Command Execution
@@ -286,8 +293,9 @@ export default function InteractiveTerminal() {
       {/* Terminal Body */}
       {activeTab === "cli" ? (
         <div
+          ref={terminalContainerRef}
           onClick={() => inputRef.current?.focus()}
-          className="p-5 h-[340px] sm:h-[380px] overflow-y-auto space-y-2 text-xs text-white/90 cursor-text select-text"
+          className="p-5 h-[340px] sm:h-[380px] overflow-y-auto space-y-2 text-xs text-white/90 cursor-text select-text scroll-smooth"
         >
           {history.map((line, idx) => (
             <div key={idx} className="leading-relaxed">
@@ -321,12 +329,9 @@ export default function InteractiveTerminal() {
               value={inputVal}
               onChange={(e) => setInputVal(e.target.value)}
               className="flex-1 bg-transparent border-none outline-none text-white font-mono text-xs caret-[var(--signal)]"
-              autoFocus
               placeholder="type 'help', 'skills', or 'snake'..."
             />
           </form>
-
-          <div ref={terminalEndRef} />
         </div>
       ) : (
         /* Snake Game View */
